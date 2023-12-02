@@ -1,46 +1,45 @@
 #import "@preview/t4t:0.3.2": is
 
-#import "../utils/utils.typ": doRepeat
+#import "../utils/utils.typ": do-repeat, set-degree
+#import "../utils/constants.typ" as constants
+#import "../utils/invisible-heading.typ": invisible-heading
 
 #let cover-page(
   config: (:),
   info: (:),
 ) = {
-  config = config
-  info = info
+
+  let (degreeFull, degreeShort) = set-degree(info.degree)
 
   set align(center)
   // Main text
 
   [
   #pagebreak(weak: true, to: if config.twoside { "odd" })
-  = #text(size: 12pt)[#info.title.join(" ")]
 
-  #doRepeat([#linebreak()], 2)
+  #invisible-heading("Title Page")
+  
+  #heading(outlined: false)[#text(size: constants.font-sizes.title)[#info.title.join("\n")]]
 
-  Thesis Title with the first letter of all words capitalized, except for
-
-  prepositions, articles and coordinate conjunctions that do not appear as the first word
-
-  #doRepeat([#linebreak()], 5)
+  #do-repeat([#linebreak()], 5)
 
   by
 
-  #doRepeat([#linebreak()], 1)
+  #do-repeat([#linebreak()], 1)
 
-  Your name as found in official HKUST records, excluding any titles
+  #info.author
 
-  #doRepeat([#linebreak()], 5)
+  #do-repeat([#linebreak()], 5)
 
   A Thesis Submitted to\
   The Hong Kong University of Science and Technology\
   in Partial Fulfillment of the Requirements for\
-  the Degree of Doctor of Philosophy\
-  in [Name of Program]
+  the Degree of #degreeFull of Philosophy\
+  in #info.program
 
-  #doRepeat([#linebreak()], 3)
+  #do-repeat([#linebreak()], 3)
 
-  month and year, Hong Kong
+  #info.submit-date.month #info.submit-date.year, #info.city
   ]
 
 }

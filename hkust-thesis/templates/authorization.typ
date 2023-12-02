@@ -1,14 +1,13 @@
 #import "@preview/t4t:0.3.2": is
 
-#import "../utils/utils.typ": SignatureLine, doRepeat
-#import "../utils/constants.typ": linespacing, pagemargin
+#import "../utils/utils.typ": signature-line, do-repeat
+#import "../utils/constants.typ" as constants
+#import "../utils/invisible-heading.typ": invisible-heading
 
 #let authorization(
   config: (:),
   info: (:),
 ) = {
-  info = info
-
 
   set align(center)
   [
@@ -16,32 +15,32 @@
 
   #set par(first-line-indent: 2em)
 
-  = #text(size: 12pt)[#underline([Authorization])]
+  #invisible-heading("Authorization Page")
+  #heading(outlined: false)[#text(size: constants.font-sizes.title)[#underline([Authorization])]]
 
-  #doRepeat([#linebreak()], 2)
+  #do-repeat([#linebreak()], 2)
 
   #align(left)[
   I hereby declare that I am the sole author of the thesis.
 
-  #doRepeat([#linebreak()], 1)
+  #do-repeat([#linebreak()], 1)
 
   I authorize the Hong Kong University of Science and Technology to lend this thesis to other institutions or individuals for the purpose of scholarly research.
 
-  #doRepeat([#linebreak()], 1)
+  #do-repeat([#linebreak()], 1)
 
   I further authorize the Hong Kong University of Science and Technology to reproduce the thesis by photocopying or by other means, in total or in part, at the request of other institutions or individuals for the purpose of scholarly research.
   ]
 
-  #doRepeat([#linebreak()], 5)
+  #do-repeat([#linebreak()], 7)
 
-  #SignatureLine()
+  #signature-line()
 
-  [type under signature line your name as found in official HKUST records,\
-  excluding any titles]
+  #info.author
 
-  #doRepeat([#linebreak()], 1)
+  #do-repeat([#linebreak()], 1)
 
-  [Date, e.g. 31 August 2015]
+  #info.submit-date.date #info.submit-date.month #info.submit-date.year
   ]
 
 }

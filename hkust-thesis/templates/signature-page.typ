@@ -1,7 +1,8 @@
 #import "@preview/t4t:0.3.2": is
 
-#import "../utils/utils.typ": SignatureLine, doRepeat
-#import "../utils/constants.typ": linespacing
+#import "../utils/utils.typ": signature-line, do-repeat, set-degree
+#import "../utils/constants.typ" as constants
+#import "../utils/invisible-heading.typ": invisible-heading
 
 #let signature-page(
   config: (:),
@@ -9,49 +10,46 @@
 ) = {
   info = info
 
+  let (degreeFull, degreeShort) = set-degree(info.degree)
+
   set align(center)
   [
   #pagebreak(weak: true, to: if config.twoside { "odd" })
-  = #text(size: 12pt)[SAMPLE SIGNATURE PAGE]
 
-  #doRepeat([#linebreak()], 1)
+  #invisible-heading("Signature Page")
+  #heading(outlined: false)[#text(size: constants.font-sizes.title)[#info.title.join("\n")]]
 
-  [Thesis Title with the first letter of all words capitalized, except for\
-  prepositions, articles and coordinate conjunctions that do not appear as the first word]
-
-  #doRepeat([#linebreak()], 5)
+  #do-repeat([#linebreak()], 5)
 
   by\
 
-  #doRepeat([#linebreak()], 1)
+  #do-repeat([#linebreak()], 1)
 
-  [Your name as found in official HKUST records, excluding any titles]
+  #info.author
 
-  #doRepeat([#linebreak()], 2)
+  #do-repeat([#linebreak()], 2)
 
-  This is to certify that I have examined the above PhD thesis\
+  This is to certify that I have examined the above #degreeShort thesis\
   and have found that it is complete and satisfactory in all respects,\
   and that any and all revisions required by\
   the thesis examination committee have been made.
 
-  #doRepeat([#linebreak()], 5)
+  #do-repeat([#linebreak()], 5)
 
-  #SignatureLine()
+  #for (person, content) in info.supervisors {
+    signature-line()
+    [#content.name, #content.role]
+    do-repeat([#linebreak()], 3)
+  }
 
-  [name of your thesis supervisor beneath signature line]
+  #signature-line()
+  #info.department-head.name, #info.department-head.position
 
-  #doRepeat([#linebreak()], 3)
+  #do-repeat([#linebreak()], 1)
 
-  #SignatureLine()
-  [name of your Department/Division/Program Office Head\
-  beneath signature line]
+  #info.department
 
-  #doRepeat([#linebreak()], 1)
-
-  [Name of Department/Division/Program Office]
-
-
-  [Date, e.g. 31 August 2015]
+  #info.submit-date.date #info.submit-date.month #info.submit-date.year
   ]
 
 }

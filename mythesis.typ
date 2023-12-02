@@ -7,22 +7,25 @@
   doc,cover-page,authorization,signature-page,toc-page,mainmatter,
 ) = documentclass(
   config: (
-    twoside: true,
+    twoside: false,
   ),
   info: (
     degree: "PhD",
     title: ("Triggering", "the Forth Impact"),
     keywords: ("Neon", "Genesis", "Evangelion"),
-    author: ("Cruel", "Angel"),
-    class-of: "2024",
-    student-id: "12345678",
-    major: "XXX Major",
+    author: "Cruel Angel",
     program: "Human Instrumentality Project",
     department: "Department of NERV",
     school: "School of SEELE",
     supervisors: (
-      main: "Prof. Adams",
-      co: "Prof. Lilith",
+      main: (
+        name: "Prof. Adams",
+        role: "Thesis Supervisor",
+      ),
+      co: (
+        name: "Prof. Lilith",
+        role: "Thesis Co-supervisor",
+      ),
     ),
     department-head: (
       name: "Prof. Ikari Yui",
@@ -84,7 +87,7 @@
 
 #show: mainmatter
 
-= INTRODUCTION <ch-introduction>
+= Introduction <ch-introduction>
 
 == Background <sec-background>
 
@@ -97,6 +100,10 @@ $ Delta E = m c^2 $ <EinsteinEM>
 $ i hbar pdv(, t) ket(Psi(hat(r),t)) = [-hbar^2/(2m) nabla^2 + V] ket(Psi(hat(r),t)) = hat(H) ket(Psi(hat(r), t)) $ <Schrodinger>
 
 #lorem(40)
+
+@eqn-EinsteinEM and @eqn-ParPhy are both the energy and mass relation.
+
+@eqn-Schrodinger is the Schrödinger equation.
 
 #lorem(100)
 
@@ -111,16 +118,15 @@ $ i hbar pdv(, t) ket(Psi(hat(r),t)) = [-hbar^2/(2m) nabla^2 + V] ket(Psi(hat(r)
 
 #lorem(20)
 
-@fig:blueSquare is a blue square.
+@fig-blueSquare is a blue square.
 
 #lorem(100)
 
-= THEORY
+= Theory
 
 #lorem(30)
 
-As discussed in 
-@ch-introduction, @ch-introduction, XXX.
+As discussed in @ch-introduction, @ch-introduction, XXX.
 
 #lorem(50)
 
@@ -131,10 +137,6 @@ Some inline equation $E^2 = p^2 + m^2$ and $E^2 = p^2 + m^2$ show something.
 $ E^2 = p^2 + m^2 $ <ParPhy>
 
 #lorem(20)
-
-@eqn:EinsteinEM and @eqn:ParPhy are both the energy and mass relation.
-
-@eqn:Schrodinger is the Schrödinger equation.
 
 == Laser intreaction with matter
 
@@ -153,7 +155,7 @@ $ E^2 = p^2 + m^2 $ <ParPhy>
 
 #lorem(20)
 
-@fig:redSquare is a red square.
+@fig-redSquare is a red square.
 
 === laser induced backward transfer (LIBT)
 
@@ -163,7 +165,7 @@ $ E^2 = p^2 + m^2 $ <ParPhy>
 
 #lorem(50)
 
-= EXPERIMENT
+= Experiment
 
 #lorem(60)
 
@@ -175,7 +177,7 @@ $ E^2 = p^2 + m^2 $ <ParPhy>
 
 #lorem(50)
 
-= CONCLUSION
+= Conclusion
 
 #lorem(50)
 

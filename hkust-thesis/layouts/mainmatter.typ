@@ -1,4 +1,8 @@
+#import "@preview/anti-matter:0.0.2": anti-front-end
 #import "@preview/i-figured:0.2.1": show-equation, show-figure, reset-counters
+
+#import "../utils/custom-numbering.typ": custom-numbering
+#import "../utils/utils.typ": do-repeat
 
 #let mainmatter(
   // i-figured settings
@@ -17,6 +21,7 @@
   ..args,
   it,
 ) = {
+  anti-front-end()
 
   // 1.2 处理 heading- 开头的其他参数
   let heading-text-args-lists = args.named().pairs()
@@ -31,8 +36,8 @@
   // Deal with math equation numbering
   
   // i-figured settings
-  show math.equation.where(block: true): it => {show-equation(it, prefix: "eqn:")}
-  show figure: show-figure
+  show math.equation.where(block: true): it => {show-equation(it, prefix: "eqn-")}
+  show figure: it => { show-figure(it, fallback-prefix: "fig-") }
 
   // set math.equation(numbering: "(1.1)")
   // set math.equation(numbering: (..nums) => {
@@ -48,7 +53,11 @@
   // set heading(numbering: numbering)
   // 4.2 设置字体字号并加入假段落模拟首行缩进
   // set heading(numbering: "1.1", supplement: "")
-  set heading(numbering: "1.1", supplement: (elem) => {
+  let my-numbering = custom-numbering.with(
+    first-level: (i, ..args) => "Chapter " + str(i), depth: 3, "1.1"
+  )
+  // let plain-numbering = "1.1"
+  set heading(numbering: my-numbering, supplement: (elem) => {
     if elem.level == 1 {
       [Chapter]
     } else {
@@ -63,12 +72,13 @@
     )
     v(array-at(heading-top-vspace, it.level))
     if (it.level == 1) {
-      [CHAPTER #counter(heading).display() \ #it.body]
+      [#upper(counter(heading).display()) \ #upper(it.body)]
       // it
+      do-repeat([#linebreak()], 2)
     } else {
       it
     }
-    v(array-at(heading-bottom-vspace, it.level))
+    // v(array-at(heading-bottom-vspace, it.level))
   }
 
   // 4.3 标题居中与自动换页

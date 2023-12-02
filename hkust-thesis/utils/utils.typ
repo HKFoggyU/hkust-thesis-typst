@@ -1,16 +1,35 @@
-#let SignatureLine(length: 70%) = (
+#let signature-line(length: 70%) = (
   align(center)[#line(length: length, stroke: 0.5pt)]
 )
 
-#let doRepeat(content, count) = (
+#let do-repeat(content, count) = (
   for time in range(count) {
-    [#(time+1) #content]
+    // [#(time+1) #content]
+    [#content]
   }
 )
 
 #let clearDoublePage() = (
   pagebreak(weak: true, to: "odd")
 )
+
+#let set-degree(degree) = {
+  let degreeFull = ""
+  let degreeShort = ""
+
+  if (lower(degree) == "phd") {
+    degreeFull = "Doctor"
+    degreeShort = "PhD"
+  } else if (lower(degree) == "mphil") { 
+    degreeFull = "Master"
+    degreeShort = "MPhil"
+  } else {
+    degreeFull = "UNKNOWN"
+    degreeShort = "UNKNOWN"
+  }
+
+  return (degreeFull, degreeShort)
+}
 
 #let TeX = style(styles => {
   let e = measure(text(1em, "E"), styles)

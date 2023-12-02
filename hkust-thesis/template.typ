@@ -25,10 +25,7 @@
     degree: "PhD",
     title: ("Triggering", "the Forth Impact"),
     keywords: ("Neon", "Genesis", "Evangelion"),
-    author: ("Cruel", "Angel"),
-    class-of: "2024",
-    student-id: "12345678",
-    major: "XXX Major",
+    author: "Cruel Angel",
     program: "Human Instrumentality Project",
     department: "Department of NERV",
     school: "School of SEELE",
@@ -50,7 +47,7 @@
         department: "Department of ECE"
       ),
       (
-        name: "Prof. CCC (Co-Supervisor)",
+        name: "Prof. CCC (Co-supervisor)",
         department: "Department of ISD"
       ),
       (
