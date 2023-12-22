@@ -1,5 +1,5 @@
 #import "@preview/anti-matter:0.0.2": anti-front-end
-#import "@preview/i-figured:0.2.1": show-equation, show-figure, reset-counters
+#import "@preview/i-figured:0.2.3": show-equation, show-figure, reset-counters
 
 #import "../utils/custom-numbering.typ": custom-numbering
 #import "../utils/utils.typ": do-repeat

@@ -4,7 +4,7 @@
 #import "hkust-thesis/utils/utils.typ": clearDoublePage
 
 #let (
-  doc,cover-page,authorization,signature-page,toc-page,mainmatter,
+  doc,cover-page,authorization,signature-page,abstract-page,toc-page,mainmatter,
 ) = documentclass(
   config: (
     twoside: false,
@@ -81,6 +81,14 @@
 
 #toc-page()
 
+// Abstract
+#[
+#show: abstract-page
+
+// #lorem(250)
+Please write your abstract text within this pair of square brackets.
+
+]
 
 
 // Main matter

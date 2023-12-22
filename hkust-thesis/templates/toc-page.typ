@@ -46,7 +46,7 @@
   // set par(leading: linespacing)
 
   {
-    set align(left)
+    set align(center)
     let toc-text = "Table of Contents"
     invisible-heading(toc-text)
     heading(outlined: false)[#text(size: constants.font-sizes.title)[#upper(toc-text)]]

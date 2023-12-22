@@ -10,6 +10,7 @@
 #import "templates/cover-page.typ": cover-page
 #import "templates/authorization.typ": authorization
 #import "templates/signature-page.typ": signature-page
+#import "templates/abstract-page.typ": abstract-page
 #import "templates/toc-page.typ": toc-page
 
 // Implement
@@ -100,6 +101,13 @@
     },
     signature-page: (..args) => {
       signature-page(
+        ..args,
+        config: config + args.named().at("config", default: (:)),
+        info: info + args.named().at("info", default: (:)),
+      )
+    },
+    abstract-page: (..args) => {
+      abstract-page(
         ..args,
         config: config + args.named().at("config", default: (:)),
         info: info + args.named().at("info", default: (:)),

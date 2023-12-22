@@ -1,5 +1,7 @@
-#let linespacing = 1.03em
+#let linespacing = 1.07em
 #let pagemargin = 25mm
+
+#let abstract-linespacing = 0.49em
 
 // fonts
 #let font-names = (
