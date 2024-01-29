@@ -4,7 +4,7 @@
 #import "hkust-thesis/utils/utils.typ": clearDoublePage
 
 #let (
-  doc,cover-page,authorization,signature-page,abstract-page,toc-page,mainmatter,
+  doc,cover-page,authorization,signature-page,abstract-page,toc-page,lof-page,lot-page,mainmatter,
 ) = documentclass(
   config: (
     twoside: false,
@@ -81,6 +81,10 @@
 
 #toc-page()
 
+#lof-page()
+
+#lot-page()
+
 // Abstract
 #[
 #show: abstract-page
@@ -121,7 +125,7 @@ $ i hbar pdv(, t) ket(Psi(hat(r),t)) = [-hbar^2/(2m) nabla^2 + V] ket(Psi(hat(r)
 
 #figure(
   rect(width: 20pt, height: 20pt, fill: blue),
-  caption: "A red square.",
+  caption: [A blue square. #lorem(40)],
 ) <blueSquare>
 
 #lorem(20)
@@ -158,8 +162,15 @@ $ E^2 = p^2 + m^2 $ <ParPhy>
 
 #figure(
   rect(width: 20pt, height: 20pt, fill: red),
-  caption: "A red square.",
+  caption: [A red square. #lorem(20)],
 ) <redSquare>
+
+#lorem(20)
+
+#figure(
+  rect(width: 20pt, height: 20pt, fill: red),
+  caption: [A red square. #lorem(20)],
+) <redSquare2>
 
 #lorem(20)
 
@@ -177,11 +188,25 @@ $ E^2 = p^2 + m^2 $ <ParPhy>
 
 #lorem(60)
 
+#figure(
+  rect(width: 20pt, height: 20pt, fill: red),
+  caption: [A red square. #lorem(20)],
+) <redSquare3>
+
+#lorem(20)
+
 #lorem(50)
 
 == Laser induced graphene (LIG)
 
 #lorem(80)
+
+#figure(
+  rect(width: 20pt, height: 20pt, fill: red),
+  caption: [A red square. #lorem(20)],
+) <redSquare4>
+
+#lorem(20)
 
 #lorem(50)
 

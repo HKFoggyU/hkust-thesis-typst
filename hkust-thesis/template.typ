@@ -12,6 +12,8 @@
 #import "templates/signature-page.typ": signature-page
 #import "templates/abstract-page.typ": abstract-page
 #import "templates/toc-page.typ": toc-page
+#import "templates/lof-page.typ": lof-page
+#import "templates/lot-page.typ": lot-page
 
 // Implement
 
@@ -115,6 +117,20 @@
     },
     toc-page: (..args) => {
       toc-page(
+        ..args,
+        config: config + args.named().at("config", default: (:)),
+        info: info + args.named().at("info", default: (:)),
+      )
+    },
+    lof-page: (..args) => {
+      lof-page(
+        ..args,
+        config: config + args.named().at("config", default: (:)),
+        info: info + args.named().at("info", default: (:)),
+      )
+    },
+    lot-page: (..args) => {
+      lot-page(
         ..args,
         config: config + args.named().at("config", default: (:)),
         info: info + args.named().at("info", default: (:)),
