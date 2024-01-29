@@ -31,6 +31,17 @@
   return (degreeFull, degreeShort)
 }
 
+// For lof and lot, ulgy hacking method
+// Need optimization in future releases!
+#let indent-entry(pre, sep, post) = style(styles => {
+  let size = measure([#pre #sep], styles)
+  set par(
+    hanging-indent: size.width,
+  )
+  [#pre#sep#post#v(-2em)]
+})
+
+
 #let TeX = style(styles => {
   let e = measure(text(1em, "E"), styles)
   let T = "T"

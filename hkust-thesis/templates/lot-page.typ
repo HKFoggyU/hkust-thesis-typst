@@ -2,6 +2,7 @@
 
 #import "../utils/invisible-heading.typ": invisible-heading
 
+
 // 目录生成
 #let lot-page(
   // documentclass 传入参数
@@ -13,24 +14,29 @@
   vspace: (25pt, 14pt),
   indent: (0pt, 4.25em, 1.6em),
   // 不显示点号
-  fill: (none, none),
+  fill: (auto, none),
   ..args,
 ) = {
-
+  
+  set text(
+    font: constants.font-names.toc,
+    size: constants.font-sizes.toc,
+  )
+  
   // page setting
   show outline.entry: outrageous.show-entry.with(
     // 保留 Typst 基础样式
     ..outrageous.presets.typst,
     body-transform: (level, it) => {
-      // 设置字体和字号
-      set text(
-        font: constants.font-names.toc,
-        size: constants.font-sizes.toc,
-      )
       // 计算缩进
-      let indent-list = indent + range(level - indent.len()).map((it) => indent.last())
-      let indent-length = indent-list.slice(0, count: level).sum()
-      h(indent-length) + it
+      if (it.has("children") and it.children.at(3, default: none) == [#": "]) {
+        let pre = it.children.slice(0, 3).sum()
+        let sep = it.children.slice(3, 4).sum()
+        let post = it.children.slice(4).sum()
+        indent-entry(pre, sep, post)
+      } else {
+        it
+      }
     },
     // vspace: vspace,
     fill: fill,
@@ -40,8 +46,6 @@
   // page rendering
   pagebreak(weak: true, to: if config.twoside { "odd" })
 
-  // set par(leading: linespacing)
-
   {
     set align(center)
     let toc-text = "List of Tables"
@@ -50,7 +54,9 @@
     do-repeat([#linebreak()], 1)
   }
 
+  {
   // 显示目录
-  outline(title: none, depth: depth)
+  i-figured.outline(target-kind: table, title: none, depth: depth)
+  }
 
 }

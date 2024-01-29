@@ -2,10 +2,6 @@
 
 #import "../utils/invisible-heading.typ": invisible-heading
 
-#let my-measure(body) = style(styles => {
-  let size = measure(body, styles)
-  return size.width
-})
 
 // 目录生成
 #let lof-page(
@@ -21,22 +17,26 @@
   fill: (none, none),
   ..args,
 ) = {
-
+  
+  set text(
+    font: constants.font-names.toc,
+    size: constants.font-sizes.toc,
+  )
+  
   // page setting
   show outline.entry: outrageous.show-entry.with(
     // 保留 Typst 基础样式
     ..outrageous.presets.typst,
     body-transform: (level, it) => {
-      // 设置字体和字号
-      set text(
-        font: constants.font-names.toc,
-        size: constants.font-sizes.toc,
-      )
       // 计算缩进
-      let indent-list = indent + range(level - indent.len()).map((it) => indent.last())
-      let indent-length = indent-list.slice(0, count: level).sum()
-      // h(indent-length) + h(-5em) + it
-      it
+      if (it.has("children") and it.children.at(3, default: none) == [#": "]) {
+        let pre = it.children.slice(0, 3).sum()
+        let sep = it.children.slice(3, 4).sum()
+        let post = it.children.slice(4).sum()
+        indent-entry(pre, sep, post)
+      } else {
+        it
+      }
     },
     // vspace: vspace,
     fill: fill,
@@ -45,8 +45,6 @@
 
   // page rendering
   pagebreak(weak: true, to: if config.twoside { "odd" })
-
-  // set par(leading: linespacing)
 
   {
     set align(center)
@@ -58,10 +56,6 @@
 
   {
   // 显示目录
-  set par(
-    // first-line-indent: 4.5em,
-    // hanging-indent: 4.5em,
-  )
   i-figured.outline(target-kind: image, title: none, depth: depth)
   }
 

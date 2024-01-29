@@ -207,6 +207,69 @@ $ E^2 = p^2 + m^2 $ <ParPhy>
 
 #lorem(20)
 
+#figure(
+  rect(width: 20pt, height: 20pt, fill: red),
+  caption: [A red square. #lorem(20)],
+)
+
+#lorem(20)
+
+#figure(
+  rect(width: 20pt, height: 20pt, fill: red),
+  caption: [A red square. #lorem(20)],
+)
+
+#lorem(20)
+
+#figure(
+  rect(width: 20pt, height: 20pt, fill: red),
+  caption: [A red square. #lorem(20)],
+)
+
+#lorem(20)
+
+#figure(
+  rect(width: 20pt, height: 20pt, fill: red),
+  caption: [A red square. #lorem(20)],
+)
+
+#lorem(20)
+
+#figure(
+  rect(width: 20pt, height: 20pt, fill: red),
+  caption: [A red square. #lorem(20)],
+)
+
+#lorem(20)
+
+#figure(
+  rect(width: 20pt, height: 20pt, fill: red),
+  caption: [A red square. #lorem(20)],
+)
+
+#lorem(20)
+
+#figure(
+  rect(width: 20pt, height: 20pt, fill: red),
+  caption: [A red square. #lorem(20)],
+)
+
+#lorem(20)
+
+#figure(
+  rect(width: 20pt, height: 20pt, fill: red),
+  caption: [A red square. #lorem(20)],
+)
+
+#lorem(20)
+
+#figure(
+  rect(width: 20pt, height: 20pt, fill: red),
+  caption: [A red square. #lorem(20)],
+)
+
+#lorem(20)
+
 #lorem(50)
 
 = Conclusion
