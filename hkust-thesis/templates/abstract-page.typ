@@ -1,7 +1,5 @@
-#import "@preview/t4t:0.3.2": is
+#import "../imports.typ": *
 
-#import "../utils/utils.typ": do-repeat, set-degree
-#import "../utils/constants.typ" as constants
 #import "../utils/invisible-heading.typ": invisible-heading
 
 #let abstract-page(

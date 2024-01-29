@@ -1,14 +1,12 @@
-#import "@preview/anti-matter:0.0.2": anti-front-end
-#import "@preview/i-figured:0.2.3": show-equation, show-figure, reset-counters
+#import "../imports.typ": *
 
 #import "../utils/custom-numbering.typ": custom-numbering
-#import "../utils/utils.typ": do-repeat
 
 #let mainmatter(
   // i-figured settings
-  show-equation: show-equation,
-  show-figure: show-figure,
-  reset-counters: reset-counters,
+  show-equation: i-figured.show-equation,
+  show-figure: i-figured.show-figure,
+  reset-counters: i-figured.reset-counters,
   // 标题字体与字号
   heading-font: "Times New Roman",
   heading-size: (12pt,),

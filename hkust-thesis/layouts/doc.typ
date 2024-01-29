@@ -1,6 +1,4 @@
-#import "@preview/t4t:0.3.2": is
-
-#import "../utils/constants.typ": linespacing, pagemargin
+#import "../imports.typ": *
 
 // 文稿设置，可以进行一些像页面边距这类的全局设置
 #let doc(
@@ -32,7 +30,7 @@
     )
   set page(
       paper: "a4",
-      margin: pagemargin,
+      margin: constants.pagemargin,
       number-align: center,
       numbering: "i",
     )
@@ -42,7 +40,7 @@
     // #set par(leading: 1.05em)
     // #set par(leading: 1.03em)
     set par(
-      leading: linespacing,
+      leading: constants.linespacing,
       justify: true
     )
 

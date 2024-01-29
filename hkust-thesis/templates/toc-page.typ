@@ -1,9 +1,6 @@
-#import "@preview/outrageous:0.1.0"
-#import "../utils/invisible-heading.typ": invisible-heading
+#import "../imports.typ": *
 
-#import "../utils/utils.typ": do-repeat
-#import "../utils/constants.typ" as constants
-// #import "../utils/constants.typ": linespacing
+#import "../utils/invisible-heading.typ": invisible-heading
 
 // 目录生成
 #let toc-page(

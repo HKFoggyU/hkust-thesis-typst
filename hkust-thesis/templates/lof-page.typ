@@ -1,10 +1,6 @@
-#import "@preview/outrageous:0.1.0"
-#import "@preview/i-figured:0.2.3"
-#import "../utils/invisible-heading.typ": invisible-heading
+#import "../imports.typ": *
 
-#import "../utils/utils.typ": do-repeat
-#import "../utils/constants.typ" as constants
-// #import "../utils/constants.typ": linespacing
+#import "../utils/invisible-heading.typ": invisible-heading
 
 #let my-measure(body) = style(styles => {
   let size = measure(body, styles)

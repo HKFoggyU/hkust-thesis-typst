@@ -1,7 +1,6 @@
-#import "@preview/physica:0.8.1": *
+#import "hkust-thesis/imports.typ": *
 
 #import "hkust-thesis/template.typ": documentclass
-#import "hkust-thesis/utils/utils.typ": clearDoublePage
 
 #let (
   doc,cover-page,authorization,signature-page,abstract-page,toc-page,lof-page,lot-page,mainmatter,
