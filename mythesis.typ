@@ -3,7 +3,7 @@
 #import "hkust-thesis/template.typ": documentclass
 
 #let (
-  doc,cover-page,authorization,signature-page,abstract-page,toc-page,lof-page,lot-page,mainmatter,
+  doc,cover-page,authorization,signature-page,abstract-page,toc-page,lof-page,lot-page,mainmatter,reference-page,postmatter,appendix
 ) = documentclass(
   config: (
     twoside: false,
@@ -67,8 +67,11 @@
       year: "2021",
   ),
     city: "Geo Front",
+    bib-filename: "mythesis.bib",
   ),
 )
+
+/* ============================================================ */
 
 #show: doc
 
@@ -84,19 +87,24 @@
 
 #lot-page()
 
+/* ============================================================ */
+
 // Abstract
 #[
 #show: abstract-page
+// Please write your abstract text *after* this line.
 
-// #lorem(250)
-Please write your abstract text within this pair of square brackets.
+#lorem(250)
 
+// Please write your abstract text *before* this line.
 ]
 
+/* ============================================================ */
 
 // Main matter
-
+#[
 #show: mainmatter
+// Please write your main text *after* this line.
 
 = Introduction <ch-introduction>
 
@@ -276,4 +284,46 @@ $ E^2 = p^2 + m^2 $ <ParPhy>
 
 #lorem(50)
 
+I cite some papers@andren_Microscopicmetavehicles_2021 @dong_Programmableheating_2022 @duy_Laserinducedgraphene_2018.
+
 #lorem(100)
+
+// Please write your main text *before* this line.
+]
+
+/* ============================================================ */
+
+// Bibliography settings
+#reference-page(
+  bib-filename: "mythesis.bib",
+  style: "institute-of-electrical-and-electronics-engineers",
+  full: false
+)
+
+/* ============================================================ */
+
+#[
+#show: appendix
+= List of Publications
+// #reference-page("../../mypublications.bib", full: true)
+*Known issue*: Typst does not support multiple bib files currently. We cannot simply feed two bib files into typst and get two bibliography pages at once. Hope it will be solved in future releases of typst!
+
+= FYTGS requirements of thesis preparation
+
+== TEC
+== Writing
+== Formatting
+
+=== font
+
+=== page
+
+= Laser parameters
+
+= Electronic circuits
+
+#figure(
+  rect(width: 20pt, height: 20pt, fill: red),
+  caption: [A red square. #lorem(20)],
+)
+]

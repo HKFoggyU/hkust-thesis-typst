@@ -7,6 +7,7 @@
 #let font-names = (
   main: "Times New Roman",
   toc: "Times New Roman",
+  title: "Times New Roman",
 )
 #let font-sizes = (
   main: 12pt,

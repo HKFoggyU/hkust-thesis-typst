@@ -10,12 +10,17 @@
   // 其他参数
   depth: 3,
   // 间距
-  vspace: (25pt, 14pt),
+  vspace: (constants.linespacing, constants.linespacing),
   indent: (0pt, 4.25em, 1.6em),
   // 不显示点号
   fill: (none, none),
   ..args,
 ) = {
+  
+  set text(
+    font: constants.font-names.toc,
+    size: constants.font-sizes.toc,
+  )
 
   // page setting
   show outline.entry: outrageous.show-entry.with(
@@ -23,16 +28,12 @@
     ..outrageous.presets.typst,
     body-transform: (level, it) => {
       // 设置字体和字号
-      set text(
-        font: constants.font-names.toc,
-        size: constants.font-sizes.toc,
-      )
       // 计算缩进
       let indent-list = indent + range(level - indent.len()).map((it) => indent.last())
       let indent-length = indent-list.slice(0, count: level).sum()
       h(indent-length) + it
     },
-    // vspace: vspace,
+    vspace: vspace,
     fill: fill,
     ..args,
   )

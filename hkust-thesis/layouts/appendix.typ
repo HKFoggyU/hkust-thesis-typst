@@ -2,10 +2,11 @@
 
 #import "../utils/custom-numbering.typ": custom-numbering
 
-#let mainmatter(
+// 文稿设置，可以进行一些像页面边距这类的全局设置
+#let appendix(
   // i-figured settings
-  show-equation: i-figured.show-equation,
-  show-figure: i-figured.show-figure,
+  show-equation: i-figured.show-equation.with(numbering: "(A.1)"),
+  show-figure: i-figured.show-figure.with(numbering: "A.1"),
   reset-counters: i-figured.reset-counters,
   // 标题字体与字号
   heading-font: "Times New Roman",
@@ -51,17 +52,14 @@
   // set heading(numbering: numbering)
   // 4.2 设置字体字号并加入假段落模拟首行缩进
   // set heading(numbering: "1.1", supplement: "")
+  counter(heading).update(0)
   let my-numbering = custom-numbering.with(
-    first-level: (i, ..args) => "Chapter " + str(i), depth: 3, "1.1"
+    first-level: (i, ..args) => "Appendix " + numbering("A", i),
+    depth: 3,
+    "A.1"
   )
-  // let plain-numbering = "1.1"
-  set heading(numbering: my-numbering, supplement: (elem) => {
-    if elem.level == 1 {
-      [Chapter]
-    } else {
-      [Section]
-    }
-  })
+  // let plain-numbering = "A."
+  set heading(numbering: my-numbering)
   // show heading: reset-counters(equations: true)
   show heading: it => {
     set text(
@@ -98,7 +96,7 @@
   show heading: it => {reset-counters(it, equations: true)}
 
   // Main matter page numbering
-  set page(numbering: "1")
-  counter(page).update(1)
+  // set page(numbering: "1")
+  // counter(page).update(1)
   it
 }

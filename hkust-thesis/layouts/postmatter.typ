@@ -2,7 +2,7 @@
 
 #import "../utils/custom-numbering.typ": custom-numbering
 
-#let mainmatter(
+#let postmatter(
   // i-figured settings
   show-equation: i-figured.show-equation,
   show-figure: i-figured.show-figure,
@@ -55,18 +55,18 @@
     first-level: (i, ..args) => "Chapter " + str(i), depth: 3, "1.1"
   )
   // let plain-numbering = "1.1"
-  set heading(numbering: my-numbering, supplement: (elem) => {
-    if elem.level == 1 {
-      [Chapter]
-    } else {
-      [Section]
-    }
-  })
+  // set heading(numbering: my-numbering, supplement: (elem) => {
+  //   if elem.level == 1 {
+  //     [Chapter]
+  //   } else {
+  //     [Section]
+  //   }
+  // })
   // show heading: reset-counters(equations: true)
   show heading: it => {
     set text(
-      font: constants.font-names.title,
-      size: constants.font-sizes.title,
+      font: "Times New Roman",
+      size: 18pt,
     )
     v(array-at(heading-top-vspace, it.level))
     if (it.level == 1) {
@@ -97,7 +97,7 @@
 
   show heading: it => {reset-counters(it, equations: true)}
 
-  // Main matter page numbering
+  // Post matter page numbering
   set page(numbering: "1")
   counter(page).update(1)
   it

@@ -1,3 +1,5 @@
+#import "constants.typ" as constants
+
 #let signature-line(length: 70%) = (
   align(center)[#line(length: length, stroke: 0.5pt)]
 )
@@ -36,6 +38,7 @@
 #let indent-entry(pre, sep, post) = style(styles => {
   let size = measure([#pre #sep], styles)
   set par(
+    leading: constants.abstract-linespacing,
     hanging-indent: size.width,
   )
   [#pre#sep#post#v(-2em)]
