@@ -56,8 +56,8 @@
   )
   // let plain-numbering = "1.1"
   set heading(numbering: my-numbering, supplement: (elem) => {
-    if elem.level == 1 {
-      [Chapter]
+    if elem.depth == 1 {
+      []
     } else {
       [Section]
     }
