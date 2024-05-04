@@ -3,10 +3,10 @@
 #import "hkust-thesis/template.typ": documentclass
 
 #let (
-  doc,cover-page,authorization,signature-page,abstract-page,toc-page,lof-page,lot-page,mainmatter,reference-page,postmatter,appendix
+  doc,cover-page,authorization,signature-page,abstract-page,toc-page,lof-page,lot-page,mainmatter,refmatter,reference-body,postmatter,appendix
 ) = documentclass(
   config: (
-    twoside: false,
+    twoside: true,
   ),
   info: (
     degree: "PhD",
@@ -141,29 +141,23 @@ $ i hbar pdv(, t) ket(Psi(hat(r),t)) = [-hbar^2/(2m) nabla^2 + V] ket(Psi(hat(r)
 
 #lorem(100)
 
-= Theory
+= Theory <ch-theory>
 
 #lorem(30)
 
-As discussed in @ch-introduction, @ch-introduction, XXX.
-
-#lorem(50)
+As discussed in @ch-introduction, @ch-theory, @sec-background, @sec-laser-intreaction-with-matter, @sec-LIFT, XXX.
 
 Some inline equation $E^2 = p^2 + m^2$ and $E^2 = p^2 + m^2$ show something.
 
-#lorem(20)
-
 $ E^2 = p^2 + m^2 $ <ParPhy>
 
-#lorem(20)
-
-== Laser intreaction with matter
+== Laser intreaction with matter <sec-laser-intreaction-with-matter>
 
 #lorem(60)
 
 #lorem(50)
 
-=== laser induced forward transfer (LIFT)
+=== laser induced forward transfer (LIFT) <sec-LIFT>
 
 #lorem(50)
 
@@ -183,7 +177,7 @@ $ E^2 = p^2 + m^2 $ <ParPhy>
 
 @fig-redSquare is a red square.
 
-=== laser induced backward transfer (LIBT)
+=== laser induced backward transfer (LIBT) <sec-LIBT>
 
 #lorem(50)
 
@@ -284,7 +278,7 @@ $ E^2 = p^2 + m^2 $ <ParPhy>
 
 #lorem(50)
 
-I cite some papers@andren_Microscopicmetavehicles_2021 @dong_Programmableheating_2022 @duy_Laserinducedgraphene_2018.
+// I cite some papers@andren_Microscopicmetavehicles_2021 @dong_Programmableheating_2022 @duy_Laserinducedgraphene_2018.
 
 #lorem(100)
 
@@ -293,19 +287,29 @@ I cite some papers@andren_Microscopicmetavehicles_2021 @dong_Programmableheating
 
 /* ============================================================ */
 
-// Bibliography settings
-#reference-page(
+// Ref matter: Bibliography settings
+#[
+#show: refmatter
+= References
+#reference-body(
   bib-filename: "mythesis.bib",
   style: "institute-of-electrical-and-electronics-engineers",
-  full: false
+  full: true,
 )
+]
 
 /* ============================================================ */
 
 #[
 #show: appendix
 = List of Publications
-// #reference-page("../../mypublications.bib", full: true)
+// #reference-body(
+//   bib-filename: "mypublications.bib",
+//   style: "institute-of-electrical-and-electronics-engineers",
+//   full: true,
+// )
+
+
 *Known issue*: Typst does not support multiple bib files currently. We cannot simply feed two bib files into typst and get two bibliography pages at once. Hope it will be solved in future releases of typst!
 
 = FYTGS requirements of thesis preparation

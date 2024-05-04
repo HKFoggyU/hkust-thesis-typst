@@ -6,6 +6,7 @@
 
 #import "layouts/doc.typ": doc
 #import "layouts/mainmatter.typ": mainmatter
+#import "layouts/refmatter.typ": refmatter
 #import "layouts/postmatter.typ": postmatter
 #import "layouts/appendix.typ": appendix
 
@@ -16,7 +17,7 @@
 #import "templates/toc-page.typ": toc-page
 #import "templates/lof-page.typ": lof-page
 #import "templates/lot-page.typ": lot-page
-#import "templates/reference-page.typ": reference-page
+#import "templates/reference-body.typ": reference-body
 
 // Implement
 
@@ -139,8 +140,8 @@
         info: info + args.named().at("info", default: (:)),
       )
     },
-    reference-page: (..args) => {
-      reference-page(
+    reference-body: (..args) => {
+      reference-body(
         ..args,
         config: config + args.named().at("config", default: (:)),
         info: info + args.named().at("info", default: (:)),
@@ -148,6 +149,12 @@
     },
     mainmatter: (..args) => {
       mainmatter(
+        ..args,
+        config: config + args.named().at("config", default: (:)),
+      )
+    },
+    refmatter: (..args) => {
+      refmatter(
         ..args,
         config: config + args.named().at("config", default: (:)),
       )

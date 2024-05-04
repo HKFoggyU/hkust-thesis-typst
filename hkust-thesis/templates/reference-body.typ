@@ -4,13 +4,14 @@
 
 
 // 目录生成
-#let reference-page(
+#let reference-body(
   // documentclass 传入参数
   config: (:),
   info: (:),
-  bib-filename: "mythesis.bib",
+  bib-filename: "mypublications.bib",
   style: "institute-of-electrical-and-electronics-engineers",
   full: false,
+  page-title: "References",
   // 其他参数
   ..args,
 ) = {
@@ -21,21 +22,21 @@
   )
 
   // page setting
-  set page(numbering: "1")
+  // set page(numbering: "1")
 
   // page rendering
-  pagebreak(weak: true, to: if config.twoside { "odd" })
+  // pagebreak(weak: true, to: if config.twoside { "odd" })
 
   // set par(leading: linespacing)
 
   // 显示References
-  {
-    set align(center)
-    let ref-page-title = "References"
-    invisible-heading(ref-page-title)
-    heading(outlined: false)[#text(size: constants.font-sizes.title)[#upper(ref-page-title)]]
-    do-repeat([#linebreak()], 1)
-  }
+  // {
+  //   set align(center)
+  //   let ref-page-title = page-title
+  //   invisible-heading(ref-page-title)
+  //   heading(outlined: false)[#text(size: constants.font-sizes.title)[#upper(ref-page-title)]]
+  //   do-repeat([#linebreak()], 1)
+  // }
 
   {
     bibliography(

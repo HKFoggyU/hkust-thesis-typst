@@ -67,7 +67,7 @@
       size: constants.font-sizes.title,
     )
     v(array-at(heading-top-vspace, it.level))
-    if (it.level == 1) {
+    if (it.depth == 1) {
       [#upper(counter(heading).display()) \ #upper(it.body)]
       // it
       do-repeat([#linebreak()], 2)
