@@ -2,8 +2,23 @@
 
 #import "hkust-thesis/template.typ": documentclass
 
+#show: alexandria(prefix: "x-", read: path => read(path))
+
+
 #let (
-  doc,cover-page,authorization,signature-page,abstract-page,toc-page,lof-page,lot-page,mainmatter,refmatter,reference-body,postmatter,appendix
+  doc,
+  cover-page,
+  authorization,
+  signature-page,
+  abstract-page,
+  toc-page,
+  lof-page,
+  lot-page,
+  mainmatter,
+  refmatter,
+  reference-body,
+  postmatter,
+  appendix,
 ) = documentclass(
   config: (
     twoside: false,
@@ -33,39 +48,39 @@
     committee: (
       (
         name: "Prof. AAA (Chairperson)",
-        department: "Department of Electronic and Computer Engineering"
+        department: "Department of Electronic and Computer Engineering",
       ),
       (
         name: "Prof. BBB (Supervisor)",
-        department: "Department of ECE"
+        department: "Department of ECE",
       ),
       (
         name: "Prof. CCC (Co-Supervisor)",
-        department: "Department of ISD"
+        department: "Department of ISD",
       ),
       (
         name: "Prof. DDD",
-        department: "Division of LIFS"
+        department: "Division of LIFS",
       ),
       (
         name: "Prof. EEE",
-        department: "Department of Physics"
+        department: "Department of Physics",
       ),
       (
         name: "Prof. FFF (External Examiner)",
-        department: "Department of EE, University of UU"
+        department: "Department of EE, University of UU",
       ),
     ),
     submit-date: (
       date: "13",
       month: "August",
       year: "2021",
-  ),
+    ),
     defend-date: (
       date: "8",
       month: "March",
       year: "2021",
-  ),
+    ),
     city: "Geo Front",
     bib-filename: "mythesis.bib",
   ),
@@ -79,12 +94,12 @@
 
 // Abstract
 #[
-#show: abstract-page
-// Please write your abstract text *after* this line.
+  #show: abstract-page
+  // Please write your abstract text *after* this line.
 
-#lorem(250)
+  #lorem(250)
 
-// Please write your abstract text *before* this line.
+  // Please write your abstract text *before* this line.
 ]
 
 #authorization()
@@ -103,231 +118,252 @@
 
 // Main matter
 #[
-#show: mainmatter
-// Please write your main text *after* this line.
+  #show: mainmatter
+  // Please write your main text *after* this line.
 
-= Introduction <ch-introduction>
+  = Introduction <ch-introduction>
 
-== Background <sec-background>
+  == Background <sec-background>
 
-#lorem(100)
+  #lorem(100)
 
-$ Delta E = m c^2 $ <EinsteinEM>
+  $ Delta E = m c^2 $ <EinsteinEM>
 
-#lorem(40)
+  #lorem(40)
 
-$ i hbar pdv(, t) ket(Psi(hat(r),t)) = [-hbar^2/(2m) nabla^2 + V] ket(Psi(hat(r),t)) = hat(H) ket(Psi(hat(r), t)) $ <Schrodinger>
+  $
+    i hbar pdv(, t) ket(Psi(hat(r), t)) = [-hbar^2/(2m) nabla^2 + V] ket(Psi(hat(r), t)) = hat(H) ket(Psi(hat(r), t))
+  $ <Schrodinger>
 
-#lorem(40)
+  #lorem(40)
 
-@eqn-EinsteinEM and @eqn-ParPhy are both the energy and mass relation.
+  @eqn-EinsteinEM and @eqn-ParPhy are both the energy and mass relation.
 
-@eqn-Schrodinger is the Schrödinger equation.
+  @eqn-Schrodinger is the Schrödinger equation.
 
-#lorem(100)
+  #lorem(100)
 
-== Recent Advancement
+  == Recent Advancement
 
-#lorem(100)
+  #lorem(100)
 
-#figure(
-  rect(width: 20pt, height: 20pt, fill: blue),
-  caption: [A blue square. #lorem(40)],
-) <blueSquare>
+  #figure(
+    rect(width: 20pt, height: 20pt, fill: blue),
+    caption: [A blue square. #lorem(40)],
+  ) <blueSquare>
 
-#lorem(20)
+  #lorem(20)
 
-@fig-blueSquare is a blue square.
+  @fig-blueSquare is a blue square.
 
-#lorem(100)
+  #lorem(100)
 
-= Theory <ch-theory>
+  = Theory <ch-theory>
 
-#lorem(30)
+  #lorem(30)
 
-As discussed in @ch-introduction, @ch-theory, @sec-background, @sec-laser-intreaction-with-matter, @sec-LIFT, XXX.
+  As discussed in @ch-introduction, @ch-theory, @sec-background, @sec-laser-intreaction-with-matter, @sec-LIFT, XXX.
 
-Some inline equation $E^2 = p^2 + m^2$ and $E^2 = p^2 + m^2$ show something.
+  Some inline equation $E^2 = p^2 + m^2$ and $E^2 = p^2 + m^2$ show something.
 
-$ E^2 = p^2 + m^2 $ <ParPhy>
+  $ E^2 = p^2 + m^2 $ <ParPhy>
 
-== Laser intreaction with matter <sec-laser-intreaction-with-matter>
+  == Laser intreaction with matter <sec-laser-intreaction-with-matter>
 
-#lorem(60)
+  #lorem(60)
 
-#lorem(50)
+  #lorem(50)
 
-=== laser induced forward transfer (LIFT) <sec-LIFT>
+  === laser induced forward transfer (LIFT) <sec-LIFT>
 
-#lorem(50)
+  #lorem(50)
 
-#figure(
-  rect(width: 20pt, height: 20pt, fill: red),
-  caption: [A red square. #lorem(20)],
-) <redSquare>
+  #figure(
+    rect(width: 20pt, height: 20pt, fill: red),
+    caption: [A red square. #lorem(20)],
+  ) <redSquare>
 
-#lorem(20)
+  #lorem(20)
 
-#figure(
-  rect(width: 20pt, height: 20pt, fill: red),
-  caption: [A red square. #lorem(20)],
-) <redSquare2>
+  #figure(
+    rect(width: 20pt, height: 20pt, fill: red),
+    caption: [A red square. #lorem(20)],
+  ) <redSquare2>
 
-#lorem(20)
+  #lorem(20)
 
-@fig-redSquare is a red square.
+  @fig-redSquare is a red square.
 
-=== laser induced backward transfer (LIBT) <sec-LIBT>
+  === laser induced backward transfer (LIBT) <sec-LIBT>
 
-#lorem(50)
+  #lorem(50)
 
-==== LIBT on Cu and glass
+  ==== LIBT on Cu and glass
 
-#lorem(50)
+  #lorem(50)
 
-= Experiment
+  = Experiment
 
-#lorem(60)
+  #lorem(60)
 
-#figure(
-  rect(width: 20pt, height: 20pt, fill: red),
-  caption: [A red square. #lorem(20)],
-) <redSquare3>
+  #figure(
+    rect(width: 20pt, height: 20pt, fill: red),
+    caption: [A red square. #lorem(20)],
+  ) <redSquare3>
 
-#lorem(20)
+  #lorem(20)
 
-#lorem(50)
+  #lorem(50)
 
-== Laser induced graphene (LIG)
+  == Laser induced graphene (LIG)
 
-#lorem(80)
+  #lorem(80)
 
-#figure(
-  rect(width: 20pt, height: 20pt, fill: red),
-  caption: [A red square. #lorem(20)],
-) <redSquare4>
+  #figure(
+    rect(width: 20pt, height: 20pt, fill: red),
+    caption: [A red square. #lorem(20)],
+  ) <redSquare4>
 
-#lorem(20)
+  #lorem(20)
 
-#figure(
-  rect(width: 20pt, height: 20pt, fill: red),
-  caption: [A red square. #lorem(20)],
-)
+  #figure(
+    rect(width: 20pt, height: 20pt, fill: red),
+    caption: [A red square. #lorem(20)],
+  )
 
-#lorem(20)
+  #lorem(20)
 
-#figure(
-  rect(width: 20pt, height: 20pt, fill: red),
-  caption: [A red square. #lorem(20)],
-)
+  #figure(
+    rect(width: 20pt, height: 20pt, fill: red),
+    caption: [A red square. #lorem(20)],
+  )
 
-#lorem(20)
+  #lorem(20)
 
-#figure(
-  rect(width: 20pt, height: 20pt, fill: red),
-  caption: [A red square. #lorem(20)],
-)
+  #figure(
+    rect(width: 20pt, height: 20pt, fill: red),
+    caption: [A red square. #lorem(20)],
+  )
 
-#lorem(20)
+  #lorem(20)
 
-#figure(
-  rect(width: 20pt, height: 20pt, fill: red),
-  caption: [A red square. #lorem(20)],
-)
+  #figure(
+    rect(width: 20pt, height: 20pt, fill: red),
+    caption: [A red square. #lorem(20)],
+  )
 
-#lorem(20)
+  #lorem(20)
 
-#figure(
-  rect(width: 20pt, height: 20pt, fill: red),
-  caption: [A red square. #lorem(20)],
-)
+  #figure(
+    rect(width: 20pt, height: 20pt, fill: red),
+    caption: [A red square. #lorem(20)],
+  )
 
-#lorem(20)
+  #lorem(20)
 
-#figure(
-  rect(width: 20pt, height: 20pt, fill: red),
-  caption: [A red square. #lorem(20)],
-)
+  #figure(
+    rect(width: 20pt, height: 20pt, fill: red),
+    caption: [A red square. #lorem(20)],
+  )
 
-#lorem(20)
+  #lorem(20)
 
-#figure(
-  rect(width: 20pt, height: 20pt, fill: red),
-  caption: [A red square. #lorem(20)],
-)
+  #figure(
+    rect(width: 20pt, height: 20pt, fill: red),
+    caption: [A red square. #lorem(20)],
+  )
 
-#lorem(20)
+  #lorem(20)
 
-#figure(
-  rect(width: 20pt, height: 20pt, fill: red),
-  caption: [A red square. #lorem(20)],
-)
+  #figure(
+    rect(width: 20pt, height: 20pt, fill: red),
+    caption: [A red square. #lorem(20)],
+  )
 
-#lorem(20)
+  #lorem(20)
 
-#figure(
-  rect(width: 20pt, height: 20pt, fill: red),
-  caption: [A red square. #lorem(20)],
-)
+  #figure(
+    rect(width: 20pt, height: 20pt, fill: red),
+    caption: [A red square. #lorem(20)],
+  )
 
-#lorem(20)
+  #lorem(20)
 
-#lorem(50)
+  #lorem(50)
 
-= Conclusion
+  = Conclusion
 
-#lorem(50)
+  #lorem(50)
 
-// I cite some papers@andren_Microscopicmetavehicles_2021 @dong_Programmableheating_2022 @duy_Laserinducedgraphene_2018.
+  // I cite some papers@andren_Microscopicmetavehicles_2021 @dong_Programmableheating_2022 @duy_Laserinducedgraphene_2018.
 
-#lorem(100)
+  #lorem(100)
 
-// Please write your main text *before* this line.
+  // Please write your main text *before* this line.
 ]
 
 /* ============================================================ */
 
 // Ref matter: Bibliography settings
 #[
-#show: refmatter
-= References
-#reference-body(
-  bib-filename: "mythesis.bib",
-  style: "institute-of-electrical-and-electronics-engineers",
-  full: true,
-)
+  #show: refmatter
+  = References
+  // #reference-body(
+  //   bib-filename: "mythesis.bib",
+  //   style: "institute-of-electrical-and-electronics-engineers",
+  //   full: true,
+  // )
+
+  @x-dong_Programmableheating_2022
+
+  #bibliographyx(
+    "mythesis.bib",
+    title: "References",
+    style: "institute-of-electrical-and-electronics-engineers",
+  )
+
 ]
 
 /* ============================================================ */
 
 #[
-#show: appendix
-= List of Publications
-// #reference-body(
-//   bib-filename: "mypublications.bib",
-//   style: "institute-of-electrical-and-electronics-engineers",
-//   full: true,
-// )
+  #show: alexandria(prefix: "y-", read: path => read(path))
+  #show: appendix
+  // = List of Publications
+
+  #bibliographyx(
+    "mypublications.bib",
+    prefix: "y-",
+    title: "List of Publications",
+    style: "institute-of-electrical-and-electronics-engineers",
+    full: true,
+  )
+
+  // #reference-body(
+  //   bib-filename: "mypublications.bib",
+  //   style: "institute-of-electrical-and-electronics-engineers",
+  //   full: true,
+  // )
 
 
-*Known issue*: Typst does not support multiple bib files currently. We cannot simply feed two bib files into typst and get two bibliography pages at once. Hope it will be solved in future releases of typst!
+  // *Known issue*: Typst does not support multiple bib files currently. We cannot simply feed two bib files into typst and get two bibliography pages at once. Hope it will be solved in future releases of typst!
 
-= FYTGS requirements of thesis preparation
+  = FYTGS requirements of thesis preparation
 
-== TEC
-== Writing
-== Formatting
+  == TEC
+  == Writing
+  == Formatting
 
-=== font
+  === font
 
-=== page
+  === page
 
-= Laser parameters
+  = Laser parameters
 
-= Electronic circuits
+  = Electronic circuits
 
-#figure(
-  rect(width: 20pt, height: 20pt, fill: red),
-  caption: [A red square. #lorem(20)],
-)
+  #figure(
+    rect(width: 20pt, height: 20pt, fill: red),
+    caption: [A red square. #lorem(20)],
+  )
 ]
