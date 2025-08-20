@@ -32,7 +32,7 @@
   and that any and all revisions required by\
   the thesis examination committee have been made.
 
-  #do-repeat([#linebreak()], 4)
+  #do-repeat([#linebreak()], 3)
 
   #for (person, content) in info.supervisors {
     signature-line()

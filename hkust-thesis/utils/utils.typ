@@ -35,28 +35,28 @@
 
 // For lof and lot, ulgy hacking method
 // Need optimization in future releases!
-#let indent-entry(pre, sep, post) = style(styles => {
-  let size = measure([#pre #sep], styles)
+#let indent-entry(pre, sep, post) = context {
+  let size = measure([#pre #sep])
   set par(
     leading: constants.abstract-linespacing,
     hanging-indent: size.width,
   )
   [#pre#sep#post#v(-2em)]
-})
+}
 
 
-#let TeX = style(styles => {
-  let e = measure(text(1em, "E"), styles)
+#let TeX = context {
+  let e = measure(text(1em, "E"))
   let T = "T"
   let E = text(1em, baseline: e.height / 4, "E")
   let X = "X"
   box(T + h(-0.1em) + E + h(-0.125em) + X)
-})
+}
 
-#let LaTeX = style(styles => {
-  let l = measure(text(1em, "L"), styles)
+#let LaTeX = context {
+  let l = measure(text(1em, "L"))
   let a = measure(text(0.7em, "A"), styles)
   let L = "L"
   let A = text(0.7em, baseline: a.height - l.height, "A")
   box(L + h(-0.3em) + A + h(-0.1em) + TeX)
-})
+}

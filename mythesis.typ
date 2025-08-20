@@ -6,7 +6,7 @@
   doc,cover-page,authorization,signature-page,abstract-page,toc-page,lof-page,lot-page,mainmatter,refmatter,reference-body,postmatter,appendix
 ) = documentclass(
   config: (
-    twoside: true,
+    twoside: false,
   ),
   info: (
     degree: "PhD",
@@ -77,6 +77,16 @@
 
 #cover-page()
 
+// Abstract
+#[
+#show: abstract-page
+// Please write your abstract text *after* this line.
+
+#lorem(250)
+
+// Please write your abstract text *before* this line.
+]
+
 #authorization()
 
 #signature-page()
@@ -88,16 +98,6 @@
 #lot-page()
 
 /* ============================================================ */
-
-// Abstract
-#[
-#show: abstract-page
-// Please write your abstract text *after* this line.
-
-#lorem(250)
-
-// Please write your abstract text *before* this line.
-]
 
 /* ============================================================ */
 
