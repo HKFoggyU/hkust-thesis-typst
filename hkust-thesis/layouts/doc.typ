@@ -10,43 +10,49 @@
 ) = {
   // 1.  默认参数
   config = (
-    twoside: true,
-  ) + config
+    (
+      twoside: true,
+    )
+      + config
+  )
   info = (
-    title: ("基于 Typst 的", "香港科技大学学位论文"),
-    author: "张三",
-  ) + info
+    (
+      title: ("基于 Typst 的", "香港科技大学学位论文"),
+      author: "张三",
+    )
+      + info
+  )
 
   // 2.  对参数进行处理
   // 2.1 如果是字符串，则使用换行符将标题分隔为列表
-  if (is.str(info.title)) {
+  if (type(info.title) == str) {
     info.title = info.title.split("\n")
   }
 
   // 3.  基本的样式设置
   set text(
-      font: "Times New Roman",
-      size: 12pt,
-    )
+    font: "Times New Roman",
+    size: 12pt,
+  )
   set page(
-      paper: "a4",
-      margin: constants.pagemargin,
-      number-align: center,
-      numbering: "i",
-    )
+    paper: "a4",
+    margin: constants.pagemargin,
+    number-align: center,
+    numbering: "i",
+  )
 
-    // Spacing:
-    // The official pdf is 1.73 line spacing
-    // #set par(leading: 1.05em)
-    // #set par(leading: 1.03em)
-    set par(
-      leading: constants.linespacing,
-      justify: true
-    )
+  // Spacing:
+  // The official pdf is 1.73 line spacing
+  // #set par(leading: 1.05em)
+  // #set par(leading: 1.03em)
+  set par(
+    leading: constants.linespacing,
+    justify: true,
+  )
 
   // 4.  PDF 元信息
   set document(
-    title: (("",)+ info.title).sum(),
+    title: (("",) + info.title).sum(),
     author: info.author,
   )
 
