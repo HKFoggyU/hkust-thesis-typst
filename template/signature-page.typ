@@ -1,7 +1,7 @@
 #import "/template/imports.typ": *
 #import "/template/page-style.typ": *
 
-#let signature(ust-setup: ust-setup) = {
+#let signature-page(ust-setup: ust-setup) = {
   [#show: global-style
     #set heading(numbering: none)
 
@@ -16,7 +16,6 @@
     #set align(center)
     // Main text
 
-
     #pagebreak(weak: true, to: if ust-setup.config.blankpage { "odd" })
 
     #invisible-heading("Signature Page")
@@ -27,19 +26,32 @@
 
     by
 
-    #v(2em)
+    #do-repeat([#linebreak()], 1)
 
     #ust-setup.info.author
 
-    #v(5em)
+    #do-repeat([#linebreak()], 2)
 
-    A Thesis Submitted to\
-    The Hong Kong University of Science and Technology\
-    in Partial Fulfillment of the Requirements for\
-    the Degree of #degreeFull of Philosophy\
-    in #ust-setup.info.program
+    This is to certify that I have examined the above #degreeShort thesis\
+    and have found that it is complete and satisfactory in all respects,\
+    and that any and all revisions required by\
+    the thesis examination committee have been made.
 
     #do-repeat([#linebreak()], 3)
 
-    #ust-setup.info.submit-date.month #ust-setup.info.submit-date.year, #ust-setup.info.city]
+    #for (person, content) in ust-setup.info.supervisors {
+      signature-line()
+      [#content.name, #content.role]
+      do-repeat([#linebreak()], 3)
+    }
+
+    #signature-line()
+    #ust-setup.info.department-head.name, #ust-setup.info.department-head.position
+
+    #do-repeat([#linebreak()], 1)
+
+    #ust-setup.info.department
+
+    #ust-setup.info.submit-date.date #ust-setup.info.submit-date.month #ust-setup.info.submit-date.year
+  ]
 }

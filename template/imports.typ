@@ -5,10 +5,12 @@
 // #import "@preview/alexandria:0.2.1": *
 
 /******** CONSTANTS ********/
-#let linespacing = 1.07em
+#let linespacing = (
+  main: 1.07em,
+  abstract: 0.49em,
+)
 #let pagemargin = 25mm
 
-#let abstract-linespacing = 0.49em
 
 // fonts
 #let font-names = (

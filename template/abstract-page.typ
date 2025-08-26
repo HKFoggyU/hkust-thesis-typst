@@ -1,7 +1,7 @@
 #import "/template/imports.typ": *
 #import "/template/page-style.typ": *
 
-#let abstract(ust-setup: ust-setup, it) = {
+#let abstract-page(ust-setup: ust-setup, it) = {
   [#show: global-style
     #set heading(numbering: none)
 
@@ -41,7 +41,7 @@
 
     #set align(left)
     #set par(
-      leading: abstract-linespacing,
+      leading: linespacing.abstract,
     )
     #it
   ]

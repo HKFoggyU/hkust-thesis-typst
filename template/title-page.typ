@@ -1,7 +1,7 @@
 #import "/template/imports.typ": *
 #import "/template/page-style.typ": *
 
-#let title-cover(ust-setup: ust-setup) = {
+#let title-page(ust-setup: ust-setup) = {
   [#show: global-style
     #set heading(numbering: none)
 

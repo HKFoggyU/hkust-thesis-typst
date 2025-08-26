@@ -1,25 +1,29 @@
-#import "hkust-thesis/imports.typ": *
+#import "/template/imports.typ": *
+#import "/template/page-style.typ": *
 
 
-#import "/template/title-page.typ": title-cover
-#import "/template/abstract-page.typ": abstract
-#import "/template/authorization-page.typ": authorization
-#import "/template/signature-page.typ": signature
+#import "/template/title-page.typ": title-page
+#import "/template/abstract-page.typ": abstract-page
+#import "/template/authorization-page.typ": authorization-page
+#import "/template/signature-page.typ": signature-page
+#import "/template/toc-page.typ": toc-page
 
 #set math.equation(numbering: "1.")
 #set heading(numbering: "1.")
+#show: global-style
 
-#title-cover()
-#abstract[
+#title-page()
+#abstract-page()[
   #lorem(300)
 ]
-#authorization()
-#signature()
+#authorization-page()
+#signature-page()
 
+#toc-page()
 
-#outline()
+/******** MAIN TEXT ********/
 
-
+#show: main-text-style
 = Introduction <ch-introduction>
 
 == Background <sec-background>
@@ -191,5 +195,19 @@ $ E^2 = p^2 + m^2 $ <ParPhy>
 #lorem(50)
 
 = Conclusion
+
+#lorem(50)
+
+#show: appendix-style
+= Appendix A
+
+#lorem(20)
+
+#figure(
+  rect(width: 20pt, height: 20pt, fill: red),
+  caption: [A red square. #lorem(20)],
+)
+
+#lorem(20)
 
 #lorem(50)

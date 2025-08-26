@@ -97,7 +97,7 @@
   #show: abstract-page
   // Please write your abstract text *after* this line.
 
-  #lorem(250)
+  #lorem(300)
 
   // Please write your abstract text *before* this line.
 ]

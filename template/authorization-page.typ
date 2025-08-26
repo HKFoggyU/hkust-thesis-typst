@@ -1,7 +1,7 @@
 #import "/template/imports.typ": *
 #import "/template/page-style.typ": *
 
-#let authorization(ust-setup: ust-setup) = {
+#let authorization-page(ust-setup: ust-setup) = {
   [#show: global-style
     #set heading(numbering: none)
 
