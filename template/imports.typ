@@ -1,6 +1,7 @@
 /******** IMPORTS ********/
 #import "@preview/physica:0.9.5": *
 #import "@preview/i-figured:0.2.4"
+#import "@preview/numblex:0.2.0": numblex
 // #import "@preview/anti-matter:0.0.2": anti-front-end
 // #import "@preview/alexandria:0.2.1": *
 

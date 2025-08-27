@@ -199,7 +199,16 @@ $ E^2 = p^2 + m^2 $ <ParPhy>
 #lorem(50)
 
 #show: appendix-style
-= Appendix A
+= List of Publications
+
+#lorem(20)
+
+== some words
+#lorem(20)
+
+#lorem(50)
+
+= Circuits Design
 
 #lorem(20)
 
