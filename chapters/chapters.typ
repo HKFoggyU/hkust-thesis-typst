@@ -1,3 +1,7 @@
+#import "/template/imports.typ": *
+#import "/template/page-style.typ": *
+
+
 = Introduction <ch-introduction>
 
 == Background <sec-background>
@@ -14,9 +18,9 @@ $ <Schrodinger>
 
 #lorem(40)
 
-@eqn-EinsteinEM and @eqn-ParPhy are both the energy and mass relation.
+@EinsteinEM and @ParPhy are both the energy and mass relation.
 
-@eqn-Schrodinger is the Schrödinger equation.
+@Schrodinger is the Schrödinger equation.
 
 #lorem(100)
 
@@ -31,7 +35,7 @@ $ <Schrodinger>
 
 #lorem(20)
 
-@fig-blueSquare is a blue square.
+@blueSquare is a blue square.
 
 #lorem(100)
 
@@ -69,7 +73,7 @@ $ E^2 = p^2 + m^2 $ <ParPhy>
 
 #lorem(20)
 
-@fig-redSquare is a red square.
+@redSquare is a red square.
 
 === laser induced backward transfer (LIBT) <sec-LIBT>
 
