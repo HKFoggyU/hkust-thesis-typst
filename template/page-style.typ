@@ -14,8 +14,22 @@
     font: font-names.main,
     size: font-sizes.main,
   )
-  set math.equation(numbering: "1.")
-  set heading(numbering: "1.")
+  // euqation numbering
+  // set math.equation(numbering: num => "(" + (counter(heading.where(level: 1)).get() + (num,)).map(str).join(".") + ")")
+  // show heading: it => {
+  //   counter(math.equation).update(0)
+  //   it
+  // }
+  // figure numbering
+  // set figure(numbering: num => (counter(heading.where(level: 1)).get() + (num,)).map(str).join("."))
+  // show heading.where(level: 1): it => {
+  //   counter(figure).update(0)
+  //   it
+  // }
+  show heading: i-figured.reset-counters
+  show figure: i-figured.show-figure
+  set math.equation(numbering: "(1)")
+  show math.equation: i-figured.show-equation
   it
 }
 
@@ -37,6 +51,7 @@
     "{1:A}.{2}.{3}",
     "Paragraph {4}", // only one level
   ))
+  set figure(numbering: num => (counter(heading.where(level: 1)).get() + (num,)).map(str).join("-"))
   set page(numbering: "i")
   counter(page).update(1)
   it

@@ -19,6 +19,8 @@
 
 #toc-page()
 
+#i-figured.outline(title: [List of Figures])
+
 /******** MAIN TEXT ********/
 
 #show: main-text-style

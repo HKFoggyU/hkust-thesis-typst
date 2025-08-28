@@ -97,7 +97,7 @@
 
 /******** UTILS ********/
 
-// 4.  PDF 元信息
+// PDF 元信息
 #set document(
   title: (("",) + ust-setup.info.title).sum(),
   author: ust-setup.info.author,

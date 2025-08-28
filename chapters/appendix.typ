@@ -6,7 +6,11 @@
 
 #lorem(20)
 
+#context {counter(heading).get()}
+
 = Circuits Design
+
+#context {counter(heading).get()}
 
 #lorem(20)
 
@@ -18,11 +22,17 @@
 == some words
 #lorem(20)
 
+#context {counter(heading).get()}
+
 === other words
 #lorem(50)
 
+$ Delta E = m c^2 $ <AppEq>
+
 ==== one detail
 #lorem(50)
+
+#context {counter(heading).get()}
 
 ==== another detail
 #lorem(50)
