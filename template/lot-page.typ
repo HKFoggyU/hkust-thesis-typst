@@ -3,7 +3,7 @@
 
 #let blank-page-to = if ust-setup.config.blankpage { "odd" }
 
-#let toc-page() = {
+#let lot-page() = {
   [#show: global-style
     #set heading(numbering: none)
 
@@ -18,9 +18,9 @@
 
     #invisible-heading("Table of Contents")
 
-    #heading(outlined: false)[#text(size: font-sizes.title)[TABLE OF CONTENTS]]
+    #heading(outlined: false)[#text(size: font-sizes.title)[LIST OF FIGURES]]
 
     #set align(left)
-    #outline(title: none)
+    #i-figured.outline(target-kind: image, title: none)
   ]
 }

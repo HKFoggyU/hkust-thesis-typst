@@ -30,14 +30,41 @@ $ <Schrodinger>
 
 #figure(
   rect(width: 20pt, height: 20pt, fill: blue),
-  caption: [A blue square. #lorem(40)],
-) <blueSquare>
+  caption: [A blue square. #lorem(25)],
+) <fig-blue-square>
+
+An example table:
+
+#figure(
+  table(
+    columns: (20%, 30%),
+    inset: 10pt,
+    align: (center + horizon, left + horizon),
+    table.header([*Volume*], [*Parameters*]),
+    $pi h (D^2 - d^2) / 4$,
+    [
+      $h$: height \
+      $D$: outer radius \
+      $d$: inner radius
+    ],
+
+    $sqrt(2) / 12 a^3$, [$a$: edge length],
+  ),
+  caption: figure.caption(
+    position: top,
+    [An example table.],
+  ),
+) <table-exp>
+
+
 
 #lorem(20)
 
-@blueSquare is a blue square.
+@fig-blue-square is a blue square.
 
 #lorem(100)
+
+
 
 = Theory <ch-theory>
 
@@ -61,19 +88,19 @@ $ E^2 = p^2 + m^2 $ <ParPhy>
 
 #figure(
   rect(width: 20pt, height: 20pt, fill: red),
-  caption: [A red square. #lorem(20)],
-) <redSquare>
+  caption: [A red square.],
+) <fig-red-square>
 
 #lorem(20)
 
 #figure(
   rect(width: 20pt, height: 20pt, fill: red),
-  caption: [A red square. #lorem(20)],
-) <redSquare2>
+  caption: [A red square.],
+) <fig-red-square2>
 
 #lorem(20)
 
-@redSquare is a red square.
+@fig-red-square is a red square.
 
 === laser induced backward transfer (LIBT) <sec-LIBT>
 
@@ -83,14 +110,15 @@ $ E^2 = p^2 + m^2 $ <ParPhy>
 
 #lorem(50)
 
+
 = Experiment
 
 #lorem(60)
 
 #figure(
   rect(width: 20pt, height: 20pt, fill: red),
-  caption: [A red square. #lorem(20)],
-) <redSquare3>
+  caption: [A red square.],
+) <fig-red-square3>
 
 #lorem(20)
 
@@ -106,75 +134,76 @@ $ Delta E = m c^2 $ <some-other-eq>
 
 #figure(
   rect(width: 20pt, height: 20pt, fill: red),
-  caption: [A red square. #lorem(20)],
-) <redSquare4>
+  caption: [A red square.],
+) <fig-red-square4>
 
 #lorem(20)
 
 #figure(
   rect(width: 20pt, height: 20pt, fill: red),
-  caption: [A red square. #lorem(20)],
+  caption: [A red square.],
 )
 
 #lorem(20)
 
 #figure(
   rect(width: 20pt, height: 20pt, fill: red),
-  caption: [A red square. #lorem(20)],
+  caption: [A red square.],
 )
 
 #lorem(20)
 
 #figure(
   rect(width: 20pt, height: 20pt, fill: red),
-  caption: [A red square. #lorem(20)],
+  caption: [A red square.],
 )
 
 #lorem(20)
 
 #figure(
   rect(width: 20pt, height: 20pt, fill: red),
-  caption: [A red square. #lorem(20)],
+  caption: [A red square.],
 )
 
 #lorem(20)
 
 #figure(
   rect(width: 20pt, height: 20pt, fill: red),
-  caption: [A red square. #lorem(20)],
+  caption: [A red square.],
 )
 
 #lorem(20)
 
 #figure(
   rect(width: 20pt, height: 20pt, fill: red),
-  caption: [A red square. #lorem(20)],
+  caption: [A red square.],
 )
 
 #lorem(20)
 
 #figure(
   rect(width: 20pt, height: 20pt, fill: red),
-  caption: [A red square. #lorem(20)],
+  caption: [A red square.],
 )
 
 #lorem(20)
 
 #figure(
   rect(width: 20pt, height: 20pt, fill: red),
-  caption: [A red square. #lorem(20)],
+  caption: [A red square.],
 )
 
 #lorem(20)
 
 #figure(
   rect(width: 20pt, height: 20pt, fill: red),
-  caption: [A red square. #lorem(20)],
+  caption: [A red square.],
 )
 
 #lorem(20)
 
 #lorem(50)
+
 
 = Conclusion
 

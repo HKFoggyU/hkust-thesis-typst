@@ -3,7 +3,7 @@
 
 #let blank-page-to = if ust-setup.config.blankpage { "odd" }
 
-#let toc-page() = {
+#let lof-page(target-kind: image, toc-title: "List of Figures") = {
   [#show: global-style
     #set heading(numbering: none)
 
@@ -16,11 +16,12 @@
 
     #pagebreak(weak: true, to: blank-page-to)
 
-    #invisible-heading("Table of Contents")
+    #invisible-heading(toc-title)
 
-    #heading(outlined: false)[#text(size: font-sizes.title)[TABLE OF CONTENTS]]
+    #heading(outlined: false)[#text(size: font-sizes.title)[#upper(toc-title)]]
 
     #set align(left)
-    #outline(title: none)
+    // #i-figured.outline(target-kind: target-kind, title: none)
+    #outline(title: none, target: figure.where(kind: target-kind))
   ]
 }

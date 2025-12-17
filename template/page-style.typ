@@ -14,45 +14,65 @@
     font: font-names.main,
     size: font-sizes.main,
   )
-  // euqation numbering
-  // set math.equation(numbering: num => "(" + (counter(heading.where(level: 1)).get() + (num,)).map(str).join(".") + ")")
-  // show heading: it => {
-  //   counter(math.equation).update(0)
-  //   it
-  // }
-  // figure numbering
-  // set figure(numbering: num => (counter(heading.where(level: 1)).get() + (num,)).map(str).join("."))
-  // show heading.where(level: 1): it => {
-  //   counter(figure).update(0)
-  //   it
-  // }
-  show heading: i-figured.reset-counters
-  show figure: i-figured.show-figure
-  set math.equation(numbering: "(1)")
-  show math.equation: i-figured.show-equation
+
+  // https://forum.typst.app/t/how-can-i-number-equations-within-sections/1936/7
+  set math.equation(numbering: it => {
+    let appx = state("backmatter", false).get()
+    let alph = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    let hdr = counter(heading).get().at(0)
+    let count = counter(heading.where(level: 1)).at(here()).first()
+    if appx { [(#alph.at(hdr - 1).#it)] } else { numbering("(1.1)", count, it) }
+  })
+
+  // https://forum.typst.app/t/how-to-change-numbering-in-appendix/1716/2
+  set figure(numbering: it => {
+    //workaround...
+    let appx = state("backmatter", false).get()
+    let alph = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    let hdr = counter(heading).get().at(0)
+    if appx [#alph.at(hdr - 1).#it] else [#hdr.#it]
+  })
+
+  show heading.where(level: 1): it => {
+    counter(figure.where(kind: image)).update(0)
+    counter(figure.where(kind: table)).update(0)
+    counter(math.equation).update(0)
+    it
+  }
+
   it
 }
 
 #let main-text-style(it) = {
-  show: global-style
   set page(numbering: "1")
   set heading(numbering: numblex("{Chapter [1]:d==1;[1]}{.[1]}{.[1]}{}{.[1]}"))
+  show heading.where(level: 1): it => {
+    counter(figure.where(kind: image)).update(0)
+    counter(figure.where(kind: table)).update(0)
+    counter(math.equation).update(0)
+    set align(center)
+    pagebreak(weak: true)
+
+    upper(counter(heading).display(it.numbering))
+    parbreak()
+    upper(it.body)
+  }
+
   counter(page).update(1)
   it
 }
 
-#let appendix-style(it) = {
-  show: global-style
-  counter(heading).update(0)
-  // set heading(numbering: numblex("{Appendix [A]:d==1;[A]}{.[1]}{.[1]}{.[1]}"))
+#let appendix-style(content) = {
+  set heading(numbering: "A.1")
   set heading(numbering: numbly(
     "Appendix {1:A}", // {level:format}
     "{1:A}.{2}", // empty format defaults to arabic numbers
     "{1:A}.{2}.{3}",
     "Paragraph {4}", // only one level
   ))
-  set figure(numbering: num => (counter(heading.where(level: 1)).get() + (num,)).map(str).join("-"))
+  counter(heading).update(0)
+  state("backmatter").update(true)
   set page(numbering: "i")
   counter(page).update(1)
-  it
+  content
 }
