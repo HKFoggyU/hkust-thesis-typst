@@ -14,6 +14,7 @@
     font: font-names.main,
     size: font-sizes.main,
   )
+  show raw: set text(font: font-names.mono)
 
   // https://forum.typst.app/t/how-can-i-number-equations-within-sections/1936/7
   set math.equation(numbering: it => {
@@ -45,13 +46,14 @@
 
 #let main-text-style(it) = {
   set page(numbering: "1")
-  set heading(numbering: numblex("{Chapter [1]:d==1;[1]}{.[1]}{.[1]}{}{.[1]}"))
+  set heading(numbering: numblex("{Chapter [1]:d==1;[1]}{.[1]}{.[1]}{.[1]}{.[1]}"))
+  show heading.where(level: 1): set heading(supplement: none)
   show heading.where(level: 1): it => {
     counter(figure.where(kind: image)).update(0)
     counter(figure.where(kind: table)).update(0)
     counter(math.equation).update(0)
     set align(center)
-    pagebreak(weak: true)
+    clear-double-page()
 
     upper(counter(heading).display(it.numbering))
     parbreak()
@@ -62,14 +64,34 @@
   it
 }
 
+#let ref-page-style(it) = {
+  set page(numbering: "1")
+  // set heading(numbering: numblex("{Chapter [1]:d==1;[1]}{.[1]}{.[1]}{}{.[1]}"), supplement: none)
+  set heading(numbering: none, supplement: none)
+  show heading.where(level: 1): it => {
+    counter(figure.where(kind: image)).update(0)
+    counter(figure.where(kind: table)).update(0)
+    counter(math.equation).update(0)
+    set align(center)
+    clear-double-page()
+    upper(it.body)
+  }
+  it
+}
+
 #let appendix-style(content) = {
-  set heading(numbering: "A.1")
-  set heading(numbering: numbly(
-    "Appendix {1:A}", // {level:format}
-    "{1:A}.{2}", // empty format defaults to arabic numbers
-    "{1:A}.{2}.{3}",
-    "Paragraph {4}", // only one level
-  ))
+  set heading(numbering: numblex("{Appendix [A]:d==1;[A]}{.[1]}{.[1]}{.[1]}{.[1]}"))
+  show heading.where(level: 1): it => {
+    counter(figure.where(kind: image)).update(0)
+    counter(figure.where(kind: table)).update(0)
+    counter(math.equation).update(0)
+    set align(center)
+    clear-double-page()
+
+    upper(counter(heading).display(it.numbering))
+    parbreak()
+    upper(it.body)
+  }
   counter(heading).update(0)
   state("backmatter").update(true)
   set page(numbering: "i")

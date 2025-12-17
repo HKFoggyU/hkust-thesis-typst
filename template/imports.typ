@@ -1,9 +1,8 @@
 /******** IMPORTS ********/
-#import "@preview/physica:0.9.5": *
-#import "@preview/i-figured:0.2.4"
+#import "@preview/physica:0.9.7": *
 #import "@preview/numblex:0.2.0": numblex
-#import "@preview/numbly:0.1.0": numbly
-// #import "@preview/alexandria:0.2.1": *
+#import "@preview/alexandria:0.2.2": *
+
 
 /******** CONSTANTS ********/
 #let linespacing = (
@@ -15,10 +14,11 @@
 
 // fonts
 #let font-names = (
-  main: "Times New Roman",
+  main: ("Times New Roman", "Source Han Sans SC"),
   toc: "Times New Roman",
   title: "Times New Roman",
   math: "XITS",
+  mono: ("Source Code Pro", "Courier New"),
 )
 #let font-sizes = (
   main: 12pt,
@@ -29,6 +29,7 @@
 
 // thesis information
 #import "/mythesis-info.typ": ust-setup
+#let blank-page-to = if ust-setup.config.blankpage { "odd" } else { none }
 
 /******** UTILS ********/
 
@@ -55,7 +56,7 @@
 )
 
 #let clear-double-page() = (
-  pagebreak(weak: true, to: "odd")
+  pagebreak(weak: true, to: blank-page-to)
 )
 
 #let set-degree(degree) = {
@@ -76,19 +77,10 @@
   return (degreeFull, degreeShort)
 }
 
-// For lof and lot, ulgy hacking method
-// Need optimization in future releases!
-#let indent-entry(pre, sep, post) = context {
-  let size = measure([#pre #sep])
-  set par(
-    leading: constants.abstract-linespacing,
-    hanging-indent: size.width,
-  )
-  [#pre#sep#post#v(-2em)]
-}
-
-
-/******** USER-DEFINED FUNCTIONS ********/
+// for three-line-table
+#let toprule = table.hline(stroke: 0.08em)
+#let bottomrule = toprule
+#let midrule = table.hline(stroke: 0.05em)
 
 #let TeX = context {
   let e = measure(text(1em, "E"))
@@ -100,7 +92,7 @@
 
 #let LaTeX = context {
   let l = measure(text(1em, "L"))
-  let a = measure(text(0.7em, "A"), styles)
+  let a = measure(text(0.7em, "A"))
   let L = "L"
   let A = text(0.7em, baseline: a.height - l.height, "A")
   box(L + h(-0.3em) + A + h(-0.1em) + TeX)
