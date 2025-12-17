@@ -66,7 +66,6 @@
 
 #let ref-page-style(it) = {
   set page(numbering: "1")
-  // set heading(numbering: numblex("{Chapter [1]:d==1;[1]}{.[1]}{.[1]}{}{.[1]}"), supplement: none)
   set heading(numbering: none, supplement: none)
   show heading.where(level: 1): it => {
     counter(figure.where(kind: image)).update(0)
@@ -74,6 +73,7 @@
     counter(math.equation).update(0)
     set align(center)
     clear-double-page()
+    
     upper(it.body)
   }
   it

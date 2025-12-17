@@ -83,7 +83,7 @@ you need to add "`bib-`" to the cite key as the prefix: "`@bib-ZhuAdv.Mater.2025
 
 #figure(
   rect(width: 20pt, height: 20pt, fill: blue),
-  caption: [A blue square. #lorem(25)],
+  caption: [A blue square. #lorem(20)],
 ) <fig-blue-square>
 
 @table-exp is an example three-line-table:
@@ -167,7 +167,6 @@ $ E^2 = p^2 + m^2 $ <eq-ParPhy-cn>
 - 指向引文(参考文献): 引用一些文献: @bib-dong_Programmableheating_2022@bib-andren_Microscopicmetavehicles_2021。或者，显式调用`cite`命令: #cite(<bib-ZhuAdv.Mater.2025>)
 
  *注意*: 目前Typst不支持多重引文。然而，在毕业论文中至少需要出现两次引文: "*References*"和"*List of Publications*"。
-
  因此，本模板使用了一个第三方包`alexandria`以实现双重引文功能。当从`bib`文件插入一个引文条目时，例如:
  ```bib
    @article{ZhuAdv.Mater.2025,
@@ -190,7 +189,7 @@ $ E^2 = p^2 + m^2 $ <eq-ParPhy-cn>
 
 #figure(
   rect(width: 20pt, height: 20pt, fill: blue),
-  caption: [A blue square. #lorem(25)],
+  caption: [A blue square. #lorem(20)],
 ) <fig-blue-square-cn>
 
 @table-exp-cn 是一个三线表。

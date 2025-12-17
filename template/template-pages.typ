@@ -13,8 +13,6 @@
 
     #set align(center)
 
-    #pagebreak(weak: true, to: if ust-setup.config.blankpage { "odd" })
-
     #invisible-heading("Title Page")
 
     #heading(outlined: false)[#text(size: font-sizes.title)[#ust-setup.info.title.join("\n")]]
@@ -77,7 +75,6 @@
     #do-repeat([#linebreak()], 1)
 
     // abstract text
-
     #set align(left)
     #set par(
       leading: linespacing.abstract,
@@ -97,7 +94,6 @@
     #let (degreeFull, degreeShort) = set-degree(ust-setup.info.degree)
 
     #set align(center)
-    // Main text
 
     #pagebreak(weak: true, to: if ust-setup.config.blankpage { "odd" })
 
@@ -151,7 +147,6 @@
     #let (degreeFull, degreeShort) = set-degree(ust-setup.info.degree)
 
     #set align(center)
-    // Main text
 
     #pagebreak(weak: true, to: if ust-setup.config.blankpage { "odd" })
 
@@ -202,7 +197,6 @@
     )
 
     #set align(center)
-    // Main text
 
     #pagebreak(weak: true, to: blank-page-to)
 
@@ -224,7 +218,6 @@
     )
 
     #set align(center)
-    // Main text
 
     #pagebreak(weak: true, to: blank-page-to)
 
@@ -233,7 +226,6 @@
     #heading(outlined: false)[#text(size: font-sizes.title)[#upper(toc-title)]]
 
     #set align(left)
-    // #i-figured.outline(target-kind: target-kind, title: none)
     #outline(title: none, target: figure.where(kind: target-kind))
   ]
 }
