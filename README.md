@@ -13,6 +13,7 @@ Much faster than its LaTeX counterpart: [hkust-thesis](https://github.com/HKFogg
 - Install [Visual Studio Code](https://code.visualstudio.com/) and an extension [Tinymist Typst](https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist)
 - Download this thesis template from [GitHub Release zip file](https://github.com/HKFoggyU/hkust-thesis-typst/releases/latest), unzip it.
 - Open the unzipped folder with Visual Studio Code.
+- Open the file `mythesis.typ`, click the "Preview" on top.
 - Read the example chapters and write.
 
 ## Contributions

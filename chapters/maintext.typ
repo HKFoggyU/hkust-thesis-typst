@@ -25,6 +25,16 @@ Generally, there is nothing special with this template, and you can write the th
 
 However, I will introduce a few highlights in this thesis template that might be essential.
 
+=== How to start using this template?
+
+I strongly recommend you use Visual Studio Code with its `Tinymist Typst` extension as the editor. It requires less (actually, #sym.arrow.r 0) effort of configuration.
+
++ Download and install #link("https://code.visualstudio.com/", text(fill: blue, "Visual Studio Code")), and install the extension #link("https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist", text(fill: blue, "Tinymist Typst")).
++ Download this thesis template from #link("https://github.com/HKFoggyU/hkust-thesis-typst/releases/latest", text(fill: blue, "GitHub Release zip file")), unzip it.
++ Open the unzipped folder with Visual Studio Code.
++ Open the file `mythesis.typ`, click the "Preview" on top.
++ Read the example chapters and write.
+
 === Basic information for thesis
 
 You can change the thesis information in the file `mythesis-info.typ`, such as thesis title, degree, author, supervisors, etc:
@@ -103,11 +113,11 @@ you need to add "`bib-`" to the cite key as the prefix: "`@bib-ZhuAdv.Mater.2025
 Noted that `table` is also wrapped in a `figure` environment. So it is the same for `algorithms`, if any.
 
 
-= 用户说明 <ch-manual-cn>
+= 用户手册 <ch-manual-cn>
 
 == 介绍Typst <sec-intro-typst-cn>
 
-不同于#LaTeX\需要`xelatex`引擎和字体配置宏包，在Typst中，我们可以很方便地使用中文，就像在Microsoft Word中一样，只需要指定CJK字体即可。
+#text(fill: gray)[不同于#LaTeX\需要`xelatex`引擎和字体配置宏包，在Typst中，我们可以很方便地使用中文，就像在Microsoft Word中一样，只需要指定CJK字体即可。]
 
 你可以从官方教程轻松入门Typst：#link("https://
 typst.app/docs/tutorial/", text(fill: blue, "https://typst.app/docs/tutorial/"))
@@ -121,6 +131,16 @@ typst.app/docs/tutorial/", text(fill: blue, "https://typst.app/docs/tutorial/"))
 一般地，本模板并无任何特殊之处，你可以立即开始写作毕业论文。
 
 但是，我会介绍一些可能比较重要的亮点。
+
+=== 如何开始使用本模板？
+
+我强烈建议使用Visual Studio Code配合它的插件`Tinymist Typst`作为编辑器。它需要非常少(实际上, #sym.arrow.r 0)精力去配置。
+
++ 下载安装#link("https://code.visualstudio.com/", text(fill: blue, "Visual Studio Code"))，并安装#link("https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist", text(fill: blue, "Tinymist Typst"))插件
++ 下载本模板的#link("https://github.com/HKFoggyU/hkust-thesis-typst/releases/latest", text(fill: blue, "GitHub Release zip压缩包"))，解压
++ 用Visual Studio Code打开解压后的文件夹
++ 打开文件`mythesis.typ`，点击上方的“预览”
++ 读示例章节，然后开始写作
 
 === 毕业论文的基本信息
 
