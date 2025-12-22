@@ -9,7 +9,7 @@
       numbering: "i",
     )
 
-    #let (degreeFull, degreeShort) = set-degree(ust-setup.info.degree)
+    #let (degreeFull, degreeShort, degreeType) = set-degree(ust-setup.info.degree)
 
     #set align(center)
 
@@ -30,7 +30,7 @@
     A Thesis Submitted to\
     The Hong Kong University of Science and Technology\
     in Partial Fulfillment of the Requirements for\
-    the Degree of #degreeFull of Philosophy\
+    the Degree of #degreeFull of #degreeType\
     in #ust-setup.info.program
 
     #do-repeat([#linebreak()], 3)
@@ -46,7 +46,7 @@
       numbering: "i",
     )
 
-    #let (degreeFull, degreeShort) = set-degree(ust-setup.info.degree)
+    #let (degreeFull, degreeShort, degreeType) = set-degree(ust-setup.info.degree)
 
     #set align(center)
 
@@ -91,7 +91,7 @@
       numbering: "i",
     )
 
-    #let (degreeFull, degreeShort) = set-degree(ust-setup.info.degree)
+    #let (degreeFull, degreeShort, degreeType) = set-degree(ust-setup.info.degree)
 
     #set align(center)
 
@@ -144,7 +144,7 @@
 
     #let title-str = ust-setup.info.title.join(" ")
 
-    #let (degreeFull, degreeShort) = set-degree(ust-setup.info.degree)
+    #let (degreeFull, degreeShort, degreeType) = set-degree(ust-setup.info.degree)
 
     #set align(center)
 
@@ -196,7 +196,7 @@
       numbering: "i",
     )
 
-    #let (degreeFull, degreeShort) = set-degree(ust-setup.info.degree)
+    #let (degreeFull, degreeShort, degreeType) = set-degree(ust-setup.info.degree)
 
     #set align(center)
 

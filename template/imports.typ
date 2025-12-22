@@ -1,5 +1,6 @@
 /******** IMPORTS ********/
-#import "@preview/physica:0.9.7": *
+// #import "@preview/physica:0.9.7": *
+// #import "@preview/unify:0.7.1": num,qty,numrange,qtyrange
 #import "@preview/numblex:0.2.0": numblex
 #import "@preview/alexandria:0.2.2": *
 
@@ -62,19 +63,27 @@
 #let set-degree(degree) = {
   let degreeFull = ""
   let degreeShort = ""
+  let degreeType = ""
 
   if (lower(degree) == "phd") {
     degreeFull = "Doctor"
     degreeShort = "PhD"
+    degreeType = "Philosophy"
   } else if (lower(degree) == "mphil") {
     degreeFull = "Master"
     degreeShort = "MPhil"
+    degreeType = "Philosophy"
+  } else if (lower(degree) == "dba") {
+    degreeFull = "Doctor"
+    degreeShort = "DBA"
+    degreeType = "Business Administration"
   } else {
     degreeFull = "UNKNOWN"
     degreeShort = "UNKNOWN"
+    degreeType = "UNKNOWN"
   }
 
-  return (degreeFull, degreeShort)
+  return (degreeFull, degreeShort, degreeType)
 }
 
 // for three-line-table

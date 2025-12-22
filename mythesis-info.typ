@@ -4,7 +4,7 @@
     blankpage: false, // set to true to add blank pages for printed version
   ),
   info: (
-    degree: "PhD",                            // only "PhD" or "MPhil"
+    degree: "PhD",                            // only "PhD"/"MPhil"/"DBA"
     title: ("Goodbye", "All of Evangelion", ),// Keep the ending comma "," here, no matter if you need to break line or not
     author: "Cruel Angel",
     program: "Human Instrumentality Project",
