@@ -5,7 +5,7 @@
   ),
   info: (
     degree: "PhD",                            // only "PhD" or "MPhil"
-    title: ("Goodbye", "All of Evangelion"),
+    title: ("Goodbye", "All of Evangelion", ),// Keep the ending comma "," here, no matter if you need to break line or not
     author: "Cruel Angel",
     program: "Human Instrumentality Project",
     department: "Department of NERV",         // or "Division of XXX"

@@ -188,6 +188,32 @@
   ]
 }
 
+#let acknowledgment-page(ust-setup: ust-setup, it) = {
+  [#show: global-style
+    #set heading(numbering: none)
+
+    #set page(
+      numbering: "i",
+    )
+
+    #let (degreeFull, degreeShort) = set-degree(ust-setup.info.degree)
+
+    #set align(center)
+
+    #pagebreak(weak: true, to: if ust-setup.config.blankpage { "odd" })
+
+    #invisible-heading("Acknowledgments")
+
+    #heading(outlined: false)[Acknowledgments]
+
+    #do-repeat([#linebreak()], 1)
+
+    // acknowledgments text
+    #set align(left)
+    #it
+  ]
+}
+
 #let toc-page() = {
   [#show: global-style
     #set heading(numbering: none)

@@ -226,7 +226,7 @@ In this thesis, ......
 #show: ref-page-style
 
 #bibliographyx(
-  "/mythesis.bib",
+  ust-setup.info.bib-maintext,
   prefix: "bib-",
   title: "References",
 )

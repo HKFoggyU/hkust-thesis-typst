@@ -7,7 +7,7 @@
 #show: alexandria(prefix: "LoP-", read: path => read(path))
 = List of Publications <appx-ch-lop>
 #bibliographyx(
-  ust-setup.info.bib-maintext,
+  ust-setup.info.bib-list-of-pub,
   prefix: "LoP-",
   title: none,
   style: "ieee",

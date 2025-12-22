@@ -10,6 +10,7 @@
 #abstract-page()[#include "/chapters/abstract-text.typ"]
 #authorization-page()
 #signature-page()
+#acknowledgment-page()[#include "/chapters/acknowledgment-text.typ"]
 #toc-page()
 #lof-page(target-kind: image, toc-title: "List of Figures")
 #lof-page(target-kind: table, toc-title: "List of Tables")
