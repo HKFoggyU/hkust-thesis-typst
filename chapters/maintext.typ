@@ -26,7 +26,7 @@ However, I will introduce a few highlights in this thesis template that might be
 
 === How to start using this template?
 
-I strongly recommend you use Visual Studio Code with its `Tinymist Typst` extension as the editor. It requires less (actually, #sym.arrow.r 0) effort of configuration.
+I strongly recommend you use Visual Studio Code with its `Tinymist Typst` extension as the editor. It requires less (actually, $->$ 0) effort of configuration.
 
 + Download and install #link("https://code.visualstudio.com/", text(fill: blue, "Visual Studio Code")), and install the extension #link("https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist", text(fill: blue, "Tinymist Typst")).
 + Download this thesis template from #link("https://github.com/HKFoggyU/hkust-thesis-typst/releases/latest", text(fill: blue, "GitHub Release zip file")), unzip it.
@@ -142,7 +142,7 @@ typst.app/docs/tutorial/", text(fill: blue, "https://typst.app/docs/tutorial/"))
 
 === 如何开始使用本模板？
 
-我强烈建议使用Visual Studio Code配合它的插件`Tinymist Typst`作为编辑器。它需要非常少(实际上, #sym.arrow.r 0)精力去配置。
+我强烈建议使用Visual Studio Code配合它的插件`Tinymist Typst`作为编辑器。它需要非常少(实际上, $->$ 0)精力去配置。
 
 + 下载安装#link("https://code.visualstudio.com/", text(fill: blue, "Visual Studio Code"))，并安装#link("https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist", text(fill: blue, "Tinymist Typst"))插件
 + 下载本模板的#link("https://github.com/HKFoggyU/hkust-thesis-typst/releases/latest", text(fill: blue, "GitHub Release zip压缩包"))，解压

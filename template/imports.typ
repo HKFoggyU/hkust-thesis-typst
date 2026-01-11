@@ -13,6 +13,7 @@
   abstract: 0.49em,
   bibliography: 0.8em,
   title-text: 0.8em,
+  toc: 0.8em,
 )
 #let pagemargin = 25mm
 

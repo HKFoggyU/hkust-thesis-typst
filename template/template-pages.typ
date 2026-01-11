@@ -252,6 +252,7 @@
     ]
 
     #set align(left)
+    #set par(leading: linespacing.toc, spacing: linespacing.toc)
     #outline(title: none, depth: 3)
   ]
 }
@@ -277,6 +278,7 @@
     ]
 
     #set align(left)
+    #set par(leading: linespacing.toc, spacing: linespacing.toc)
     #outline(title: none, target: figure.where(kind: target-kind))
   ]
 }
