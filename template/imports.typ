@@ -1,6 +1,8 @@
 /******** IMPORTS ********/
 // #import "@preview/physica:0.9.7": *
-// #import "@preview/unify:0.7.1": num,qty,numrange,qtyrange
+// #import "@preview/unify:0.7.1": num,unit,qty,numrange,qtyrange
+// #import "@preview/typsium:0.3.1":*
+// #import "@preview/mitex:0.2.6": *
 #import "@preview/numblex:0.2.0": numblex
 #import "@preview/alexandria:0.2.2": *
 

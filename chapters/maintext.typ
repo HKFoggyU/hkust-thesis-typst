@@ -1,6 +1,5 @@
 #import "/template/imports.typ": *
 #import "/template/page-style.typ": *
-#show: alexandria(prefix: "bib-", read: path => read(path))
 
 //**************** USER FUNCTIONS (if any) ****************//
 
@@ -79,10 +78,19 @@ you need to add "`bib-`" to the cite key as the prefix: "`@bib-ZhuAdv.Mater.2025
 
 === Figures and Tables
 
-@fig-blue-square is a figure with very long caption.
+@fig-blue-square is a figure with very long caption. To insert a real image, you can replace the
+```typst
+rect(width: 20pt, height: 20pt, fill: blue),
+```
+line by
+```typst
+image("/figure/XXX.jpg"),
+```
+with the path to image specified.
 
 #figure(
   rect(width: 20pt, height: 20pt, fill: blue),
+  // image("/figure/XXX.jpg", width: 50%),
   caption: [A blue square. #lorem(20)],
 ) <fig-blue-square>
 
@@ -185,10 +193,19 @@ $ E^2 = p^2 + m^2 $ <eq-ParPhy-cn>
 
 === 图表
 
-@fig-blue-square-cn 是一个有很长图注的图。
+@fig-blue-square-cn 是一个有很长图注的图。要插入真正的图片文件，将下行
+```typst
+rect(width: 20pt, height: 20pt, fill: blue),
+```
+替换为
+```typst
+image("/figure/XXX.jpg"),
+```
+其中指定图片的路径。
 
 #figure(
   rect(width: 20pt, height: 20pt, fill: blue),
+  // image("/figure/XXX.jpg", width: 50%),
   caption: [A blue square. #lorem(20)],
 ) <fig-blue-square-cn>
 
