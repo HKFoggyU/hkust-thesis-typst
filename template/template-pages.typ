@@ -15,7 +15,11 @@
 
     #invisible-heading("Title Page")
 
-    #heading(outlined: false)[#text(size: font-sizes.title)[#ust-setup.info.title.join("\n")]]
+    #heading(outlined: false)[
+      #set par(leading: linespacing.title-text, spacing: linespacing.title-text)
+      #set text(size: font-sizes.title)
+      #ust-setup.info.title.join("\n")
+    ]
 
     #do-repeat([#linebreak()], 5)
 
@@ -54,7 +58,11 @@
 
     #invisible-heading("Abstract")
 
-    #heading(outlined: false)[#text(size: font-sizes.title)[#ust-setup.info.title.join("\n")]]
+    #heading(outlined: false)[
+      #set par(leading: linespacing.title-text, spacing: linespacing.title-text)
+      #set text(size: font-sizes.title)
+      #ust-setup.info.title.join("\n")
+    ]
 
     #do-repeat([#linebreak()], 1)
 
@@ -152,7 +160,11 @@
 
     #invisible-heading("Signature Page")
 
-    #heading(outlined: false)[#text(size: font-sizes.title)[#ust-setup.info.title.join("\n")]]
+    #heading(outlined: false)[
+      #set par(leading: linespacing.title-text, spacing: linespacing.title-text)
+      #set text(size: font-sizes.title)
+      #ust-setup.info.title.join("\n")
+    ]
 
     #do-repeat([#linebreak()], 5)
 
@@ -204,7 +216,12 @@
 
     #invisible-heading("Acknowledgments")
 
-    #heading(outlined: false)[Acknowledgments]
+    #heading(outlined: false)[
+      #text(
+        size: font-sizes.title,
+        "Acknowledgments",
+      )
+    ]
 
     #do-repeat([#linebreak()], 1)
 
@@ -228,7 +245,11 @@
 
     #invisible-heading("Table of Contents")
 
-    #heading(outlined: false)[#text(size: font-sizes.title)[TABLE OF CONTENTS]]
+    #heading(outlined: false)[
+      #set par(leading: linespacing.title-text, spacing: linespacing.title-text)
+      #set text(size: font-sizes.title)
+      TABLE OF CONTENTS
+    ]
 
     #set align(left)
     #outline(title: none, depth: 3)
@@ -249,7 +270,11 @@
 
     #invisible-heading(toc-title)
 
-    #heading(outlined: false)[#text(size: font-sizes.title)[#upper(toc-title)]]
+    #heading(outlined: false)[
+      #set par(leading: linespacing.title-text, spacing: linespacing.title-text)
+      #set text(size: font-sizes.title)
+      #upper(toc-title)
+    ]
 
     #set align(left)
     #outline(title: none, target: figure.where(kind: target-kind))

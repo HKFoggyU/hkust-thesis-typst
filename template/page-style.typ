@@ -54,6 +54,7 @@
     counter(figure.where(kind: image)).update(0)
     counter(figure.where(kind: table)).update(0)
     counter(math.equation).update(0)
+    set text(size: font-sizes.chapter-title)
     set align(center)
     clear-double-page()
 
@@ -73,6 +74,7 @@
     counter(figure.where(kind: image)).update(0)
     counter(figure.where(kind: table)).update(0)
     counter(math.equation).update(0)
+    set text(size: font-sizes.chapter-title)
     set align(center)
     clear-double-page()
     
@@ -87,6 +89,7 @@
     counter(figure.where(kind: image)).update(0)
     counter(figure.where(kind: table)).update(0)
     counter(math.equation).update(0)
+    set text(size: font-sizes.chapter-title)
     set align(center)
     clear-double-page()
 

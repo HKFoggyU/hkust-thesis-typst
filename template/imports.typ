@@ -11,6 +11,8 @@
 #let linespacing = (
   main: 1.07em,
   abstract: 0.49em,
+  bibliography: 0.49em,
+  title-text: 0.8em,
 )
 #let pagemargin = 25mm
 
@@ -25,8 +27,8 @@
 )
 #let font-sizes = (
   main: 12pt,
-  title: 16pt,
-  sec-title: 16pt,
+  title: 20pt,
+  chapter-title: 16pt,
   toc: 12pt,
 )
 
