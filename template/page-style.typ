@@ -80,6 +80,7 @@
     
     upper(it.body)
   }
+  set par(leading: linespacing.bibliography, spacing: linespacing.bibliography)
   it
 }
 

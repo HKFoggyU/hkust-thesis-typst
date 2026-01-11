@@ -11,7 +11,7 @@
 #let linespacing = (
   main: 1.07em,
   abstract: 0.49em,
-  bibliography: 0.49em,
+  bibliography: 0.8em,
   title-text: 0.8em,
 )
 #let pagemargin = 25mm
