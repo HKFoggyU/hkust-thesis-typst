@@ -1,5 +1,7 @@
 # HKUST Thesis Typst
 
+[English Readme](README.md)
+
 [![LICENSE](https://img.shields.io/github/license/HKFoggyU/hkust-thesis-typst)](https://www.latex-project.org/lppl/lppl-1-3c/)
 [![STARS](https://img.shields.io/github/stars/HKFoggyU/hkust-thesis-typst)](https://github.com/HKFoggyU/hkust-thesis-typst/stargazers)
 [![RELEASE](https://github.com/HKFoggyU/hkust-thesis-typst/actions/workflows/release.yml/badge.svg)](https://github.com/HKFoggyU/hkust-thesis-typst/releases)
