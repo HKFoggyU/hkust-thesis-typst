@@ -35,7 +35,7 @@
     The Hong Kong University of Science and Technology\
     in Partial Fulfillment of the Requirements for\
     the Degree of #degreeFull of #degreeType\
-    in #ust-setup.info.program
+    #if ust-setup.info.degree == "DBA" [] else [in #ust-setup.info.program]
 
     #do-repeat([#linebreak()], 3)
 
@@ -70,7 +70,7 @@
 
     #do-repeat([#linebreak()], 2)
 
-    #ust-setup.info.department
+    #if ust-setup.info.degree == "DBA" [Doctor of Business Administration Program] else [#ust-setup.info.department]
 
     #do-repeat([#linebreak()], 1)
 
@@ -194,7 +194,7 @@
 
     #do-repeat([#linebreak()], 1)
 
-    #ust-setup.info.department
+    #if ust-setup.info.degree == "DBA" [Doctor of Business Administration Program] else [#ust-setup.info.department]
 
     #ust-setup.info.submit-date.date #ust-setup.info.submit-date.month #ust-setup.info.submit-date.year
   ]
