@@ -8,22 +8,22 @@
 
 #set par(leading: linespacing.bibliography, spacing: linespacing.bibliography)
 
-#show: alexandria(prefix: "LoP-", read: path => read(path))
+/**************** Journal Publications ****************/
 #heading(level: 2, numbering: none)[Journal Publications]
-#bibliographyx(
+#bibliography(
   ust-setup.info.bib-list-of-pub,
-  prefix: "LoP-",
   title: none,
   style: "ieee",
   full: true,
+  group: none
 )
 
-// #show: alexandria(prefix: "ConfPub-", read: path => read(path))
-// #heading(level: 2, numbering: none)[Conference Publications]
-// #bibliographyx(
-//   "XXX-conf-pub.bib",
-//   prefix: "ConfPub-",
-//   title: none,
-//   style: "ieee",
-//   full: true,
-// )
+/**************** Conference Publications ****************/
+#heading(level: 2, numbering: none)[Conference Publications]
+#bibliography(
+  ust-setup.info.bib-list-of-pub, // Please change to another bib file
+  title: none,
+  style: "ieee",
+  full: true,
+  group: none
+)

@@ -41,8 +41,6 @@
     it
   }
 
-  show: alexandria(prefix: "bib-", read: path => read(path))
-  
   it
 }
 

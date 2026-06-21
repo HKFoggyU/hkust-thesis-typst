@@ -32,7 +32,8 @@ I strongly recommend you use Visual Studio Code with its `Tinymist Typst` extens
 + Download this thesis template from #link("https://github.com/HKFoggyU/hkust-thesis-typst/releases/latest", text(fill: blue, "GitHub Release zip file")), unzip it.
 + Open the unzipped folder with Visual Studio Code.
 + Open the file `mythesis.typ`, click the "Preview" on top.
-+ Read the example chapters and write.
++ (Optional): Press `Ctrl+Shift+p` to open the VSCode command line, and input `typst: pin the Main File` to pin the current file as the main file)
++ Open the example chapters files and write.
 
 === Basic information for thesis
 
@@ -56,25 +57,7 @@ where a space exists between `$$` and equation body: `$ E^2 = p^2 + m^2 $`.
 
 - Links to external URLs: hkust-thesis-typst is prepared according to #link("https://fytgs.hkust.edu.hk/academics/Academic-Regulations-and-Requirements/Handbook-for-Research-Postgraduate-Studies/guidelines-thesis-preparation")[#text(fill: blue, "RPG handbook")].
 
-- Links to references (bibliography): Cite some papers: @bib-dong_Programmableheating_2022@bib-andren_Microscopicmetavehicles_2021. Or, explicitly call the `cite` command: #cite(<bib-ZhuAdv.Mater.2025>)
-
- *Attention*: Currently Typst does not support multiple bibliographies. However, in a thesis, at least two bibliographies are required: the "*References*" and the "*List of Publications*".
-
- Therefore, this template uses a third-party package called `alexandria` to implement dual-bibliography function. When inserting a cite key from the `bib` file, for example:
- ```bib
-   @article{ZhuAdv.Mater.2025,
-     title = {Mesoporous Nanogel Sprays as Universal Evaporation Interface Modifiers for Boosting Water-Cluster Evaporation},
-     author = {Zhu, Haiyun and Yang, Junsheng and Li, Chengcheng and Zhong, Yajie and Tian, Xinlong and Zhang, Mingxin and Huang, Wei},
-     date = {2025-03-11},
-     journaltitle = {Advanced Materials},
-     volume = {n/a},
-     number = {n/a},
-     pages = {2419243},
-     doi = {10.1002/adma.202419243},
-   }
- ```
-
-you need to add "`bib-`" to the cite key as the prefix: "`@bib-ZhuAdv.Mater.2025`" to let the package successfully recognize the instered citation.
+- Links to references (bibliography): Cite some papers: @dong_Programmableheating_2022 @andren_Microscopicmetavehicles_2021. Or, explicitly call the `cite` command: #cite(<ZhuAdv.Mater.2025>)
 
 === Figures and Tables
 
@@ -148,7 +131,8 @@ typst.app/docs/tutorial/", text(fill: blue, "https://typst.app/docs/tutorial/"))
 + 下载本模板的#link("https://github.com/HKFoggyU/hkust-thesis-typst/releases/latest", text(fill: blue, "GitHub Release zip压缩包"))，解压
 + 用Visual Studio Code打开解压后的文件夹
 + 打开文件`mythesis.typ`，点击上方的“预览”
-+ 读示例章节，然后开始写作
++ (可选): 按快捷键 `Ctrl+Shift+p` 打开VSCode命令行，输入 `typst: pin the Main File`，用以固定当前文件为主文件
++ 打开示例章节文件，然后开始写作
 
 === 毕业论文的基本信息
 
@@ -172,24 +156,7 @@ $ E^2 = p^2 + m^2 $ <eq-ParPhy-cn>
 
 - 指向外部URLs: hkust-thesis-typst是按照#link("https://fytgs.hkust.edu.hk/academics/Academic-Regulations-and-Requirements/Handbook-for-Research-Postgraduate-Studies/guidelines-thesis-preparation")[#text(fill: blue, "RPG handbook")]准备的.
 
-- 指向引文(参考文献): 引用一些文献: @bib-dong_Programmableheating_2022@bib-andren_Microscopicmetavehicles_2021。或者，显式调用`cite`命令: #cite(<bib-ZhuAdv.Mater.2025>)
-
- *注意*: 目前Typst不支持多重引文。然而，在毕业论文中至少需要出现两次引文: "*References*"和"*List of Publications*"。
- 因此，本模板使用了一个第三方包`alexandria`以实现双重引文功能。当从`bib`文件插入一个引文条目时，例如:
- ```bib
-   @article{ZhuAdv.Mater.2025,
-     title = {Mesoporous Nanogel Sprays as Universal Evaporation Interface Modifiers for Boosting Water-Cluster Evaporation},
-     author = {Zhu, Haiyun and Yang, Junsheng and Li, Chengcheng and Zhong, Yajie and Tian, Xinlong and Zhang, Mingxin and Huang, Wei},
-     date = {2025-03-11},
-     journaltitle = {Advanced Materials},
-     volume = {n/a},
-     number = {n/a},
-     pages = {2419243},
-     doi = {10.1002/adma.202419243},
-   }
- ```
-
-你需要在引文条目前面添加"`bib-`"作为前缀: "`@bib-ZhuAdv.Mater.2025`"才能使得这个包正确识别插入的引文内容。
+- 指向引文(参考文献): 引用一些文献: @dong_Programmableheating_2022 @andren_Microscopicmetavehicles_2021。或者，显式调用`cite`命令: #cite(<ZhuAdv.Mater.2025>)
 
 === 图表
 
@@ -242,8 +209,8 @@ In this thesis, ......
 /**************** REFERENCES ****************/
 #show: ref-page-style
 
-#bibliographyx(
+#bibliography(
   ust-setup.info.bib-maintext,
-  prefix: "bib-",
   title: "References",
+  group: none
 )
